@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrinho | Coffee Experience</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
+</head>
+
+<body>
+
+    <header >
+
+        <button class="menu-mobile" id="menuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+       
+        <nav>
+
+            <a href="index.html" class="nav-logo">
+                Velvet<span>Coffee</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                 <li><a href="../pages/carrinho.html" class="active">Carrinho</a></li>
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+
+            <div class="nav-actions">
+
+                <button class="btn-icon" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <a class="btn-icon" href="/pages/favoritos.html">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+
+                <button class="btn-icon">
+                    <i class="fa-solid fa-cart-shopping">
+                    <!-- <span class="badge show">3</span> -->
+                    </i>
+                </button>
+            </div>
+        </nav>
+
+        <button class="btn-icon" id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+         </button>
+
+    </header>
+
+    <!-- PAGE -->
+    <main class="page">
+
+        <section class="section">
+
+            <div class="container">
+
+                <!-- HEADER -->
+                <div class="section-header">
+
+                    <h1 class="section-title">
+                        Seu Carrinho
+                    </h1>
+
+                    <div class="section-divider"></div>
+
+                    <p class="section-sub">
+                        Confira seus pedidos antes de finalizar a compra.
+                    </p>
+
+                </div>
+
+                <!-- LAYOUT -->
+                <div class="cart-layout">
+
+                    <!-- ITENS -->
+                    <div class="cart-layout">
+
+    <!-- ITENS -->
+    <div class="cart-items">
+
+        <div class="btn-back-home">
+            <a href="/pages/cardapio.html" >
+                Voltar
+            </a>
+        </div>
+
+    </div>
+
+            <!-- RESUMO -->
+            <aside class="cart-summary">
+
+            <h2 class="summary-title">
+                Resumo do Pedido
+            </h2>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>R$ 20</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Entrega</span>
+                <span>R$ 8</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Desconto</span>
+                <span>- R$ 0</span>
+            </div>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <strong>R$ 28</strong>
+            </div>
+
+            <div class="checkout-form">
+
+                <input
+                    type="text"
+                    placeholder="Digite seu endereço"
+                >
+
+                <select>
+                    <option>Cartão de Crédito</option>
+                    <option>PIX</option>
+                    <option>Dinheiro</option>
+                </select>
+
+                <a class="btn btn-primary checkout-btn" href="/pages/pagamento.html">
+                    Finalizar Pedido
+                </a>
+
+            </div>
+
+        </aside>
+
+        </div>
+                </div>
+
+          </div>
+        </section>
+    </main>
+<script src="../js/main.js"></script>
+<script src="../js/cardapio.js"></script>
+<script src="../js/favoritos.js"></script>
+<script src="../js/carrinho.js"></script>
+</body>
+</html>

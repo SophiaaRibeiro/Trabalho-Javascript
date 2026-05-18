@@ -1,11 +1,210 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Velvet Coffee</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
+
 <body>
-    
+
+    <!-- HEADER -->
+    <header class="header">
+
+            <button class="menu-mobile" id="menuMobile">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        <nav>
+
+        <a href="index.html" class="nav-logo">
+            Velvet<span>Coffee</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="/pages/cardapio.html">Cardápio</a></li>
+            <li><a href="/pages/favoritos.html">Favoritos</a></li>
+            <li><a href="/pages/quiz.html">Quiz</a></li>
+            <li><a href="/pages/contato.html">Contato</a></li>
+        </ul>
+
+        <div class="nav-actions">
+
+            <button class="btn-icon" id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+           <a class="btn-icon" href="/pages/favoritos.html">
+                <i class="fa-solid fa-heart"></i>
+            </a>
+
+        </div>
+
+    </nav>         
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="subtitle">
+                experiências suaves,
+                <br> cafés inesquecíveis.
+            </p>
+
+            <h1>
+                O sabor perfeito para acompanhar seus momentos.
+            </h1>
+
+            <p class="description">
+                Descubra cafés especiais, sabores únicos e uma experiência
+                moderna criada para apaixonados por café.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">
+                    Explorar Cafés
+                </a>
+
+                <a href="#" class="btn-secondary">
+                    Nosso Espaço
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="highlights">
+
+        <div class="section-title">
+            <p>nosso menu</p>
+            <h2>Destaques da Velvet</h2>
+        </div>
+
+        <div class="cards">
+
+            <!-- CARD 1 -->
+            <div class="card">
+
+                <img src="img/expresso-premium.jpg" alt="Café Espresso">
+
+                <div class="card-content">
+                    <h3>Espresso Premium</h3>
+
+                    <p>
+                        Aroma intenso e sabor marcante para começar o dia.
+                    </p>
+
+                    <a href="pages/cardapio.html">
+                        Ver detalhes
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+
+                <img src="img/latte-cremoso.jpg" alt="Latte Cremoso">
+
+                <div class="card-content">
+                    <h3>Latte Cremoso</h3>
+
+                    <p>
+                        Uma combinação suave de café, leite e cremosidade.
+                    </p>
+
+                   <a href="pages/cardapio.html">
+                        Ver detalhes
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card">
+
+                <img src="img/cappucciono-especial.jpg" alt="Cappuccino">
+
+                <div class="card-content">
+                    <h3>Cappuccino Especial</h3>
+
+                    <p>
+                        Equilíbrio perfeito entre intensidade e suavidade.
+                    </p>
+
+                    <a href="pages/cardapio.html">
+                        Ver detalhes
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="experience">
+
+        <div class="experience-text">
+
+            <p class="small-title">
+                velvet coffee
+            </p>
+
+            <h2>
+                Um ambiente moderno, aconchegante e pensado para você.
+            </h2>
+
+            <p>
+                Criamos uma experiência minimalista e sofisticada,
+                unindo cafés especiais, conforto e tecnologia em um só lugar.
+            </p>
+
+            <a href="/pages/cardapio.html" class="btn-primary">
+                Conhecer Cardápio
+            </a>
+
+        </div>
+
+        <div class="experience-image">
+            <img src="img/coffe-shop.jpg" alt="Interior cafeteria">
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <h2>Velvet Coffee</h2>
+
+        <p>
+            © 2026 — Projeto acadêmico desenvolvido para a disciplina de JavaScript.
+        </p>
+
+    </footer>
+<div class="menu-overlay" id="menuOverlay"></div>
+<script src="js/main.js"></script>
+
 </body>
 </html>

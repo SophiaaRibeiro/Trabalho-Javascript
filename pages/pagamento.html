@@ -1,0 +1,225 @@
+<!-- pagamento.html -->
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pagamento | Velvet Coffee</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pagamento.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header >
+
+        <button class="menu-mobile" id="menuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+       
+        <nav>
+
+            <a href="index.html" class="nav-logo">
+                Velvet<span>Coffee</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                <li><a href="../pages/pagamento.html" class="active">Pagamento</a></li>
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+                
+            </ul>
+
+            <div class="nav-actions">
+
+                <button class="btn-icon" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <a class="btn-icon" href="/pages/favoritos.html">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+
+                <button class="btn-icon">
+                    <i class="fa-solid fa-cart-shopping">
+                    <!-- <span class="badge show">3</span> -->
+                    </i>
+                </button>
+            </div>
+        </nav>
+
+        <button class="btn-icon" id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+         </button>
+
+    </header>
+
+    <!-- PAGE -->
+    <main class="page">
+        
+
+        <section class="payment-section">           
+
+            <div class="payment-card">
+
+                <div class="payment-header">
+
+                    <div class="payment-icon">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+
+                    <h1>
+                        Finalizar Pagamento
+                    </h1>
+
+                    <p>
+                        Complete seu pedido e aproveite sua experiência Velvet Coffee.
+                    </p>
+
+                </div>
+
+                <!-- RESUMO -->
+                <div class="payment-summary">
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong id="subtotalValue">
+                            R$ 0
+                        </strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Entrega</span>
+                        <strong>
+                            R$ 8
+                        </strong>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <strong id="totalValue">
+                            R$ 0
+                        </strong>
+                    </div>
+
+                </div>
+
+                <!-- FORM -->
+                <form class="payment-form" id="paymentForm">
+
+                    <div class="form-group">
+
+                        <label>
+                            Nome no cartão
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Seu nome"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Número do cartão
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="0000 0000 0000 0000"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                Validade
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="08/29"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                CVV
+                            </label>
+
+                            <input
+                                type="password"
+                                placeholder="123"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <a href="/pages/carrinho.html" class="btn-back-home" >
+                    Voltar
+                </a>
+
+                    <button
+                        type="submit"
+                        class="btn-payment"
+                    >
+                        Confirmar Pedido
+                    </button>
+
+                </form>
+
+                <!-- SUCCESS -->
+                <div class="payment-success" id="paymentSuccess">
+
+                    <div class="success-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <h2>
+                        Pedido Confirmado!
+                    </h2>
+
+                    <p>
+                        Seu café já está sendo preparado ☕✨
+                    </p>
+
+                    <a
+                        href="../index.html"
+                        class="btn-back-home"
+                    >
+                        Voltar para Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../js/pagamento.js"></script>
+
+</body>
+</html>
