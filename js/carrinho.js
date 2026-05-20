@@ -1,7 +1,5 @@
-// ======================
-// VERIFICA SE É A PÁGINA DO CARRINHO
-// ======================
 
+// VERIFICA SE É A PÁGINA DO CARRINHO
 const cartContainer = document.querySelector('.cart-items');
 
 if (!cartContainer) {
@@ -10,9 +8,8 @@ if (!cartContainer) {
 
 } else {
 
-    // ======================
-    // ELEMENTOS
-    // ======================
+   
+    // ELEMENTOS    
 
     const subtotalElement =
         document.querySelectorAll('.summary-row span')[1];
@@ -21,24 +18,20 @@ if (!cartContainer) {
         document.querySelector('.summary-total strong');
 
 
-    // ======================
-    // PEGAR CARRINHO
-    // ======================
+       // PEGAR CARRINHO
+   
 
     let cart =
         JSON.parse(localStorage.getItem('cart')) || [];
-
-
-    // ======================
+ 
     // RENDERIZAR CARRINHO
-    // ======================
 
     function renderCart() {
 
         cartContainer.innerHTML = `
 
             <div>
-                <a href="/pages/cardapio.html" class="btn-close">
+                <a href="/pages/cardapio.html" class="btn-back-home ">
                     Voltar
                 </a>
             </div>
@@ -173,9 +166,8 @@ if (!cartContainer) {
     }
 
 
-    // ======================
     // EVENTOS
-    // ======================
+
 
     function addCartEvents() {
 
@@ -243,10 +235,7 @@ if (!cartContainer) {
 
     }
 
-
-    // ======================
     // UPDATE
-    // ======================
 
     function updateCart() {
 
@@ -259,18 +248,13 @@ if (!cartContainer) {
 
     }
 
-
-    // ======================
     // INICIAR
-    // ======================
 
     renderCart();
 
 }
 
-// ======================
 // CHECKOUT
-// ======================
 
 const checkoutButton =
     document.querySelector('.checkout-btn');

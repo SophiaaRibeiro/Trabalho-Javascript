@@ -23,9 +23,7 @@ themeToggle.addEventListener('click', () => {
 
 });
 
-// =========================
 // MENU MOBILE
-// =========================
 
 const menuButton = document.getElementById('menuMobile');
 

@@ -1,7 +1,5 @@
-// =========================
-// FILTROS
-// =========================
 
+// FILTROS
 const chips = document.querySelectorAll('.chip');
 const cards = document.querySelectorAll('.coffee-card');
 
@@ -46,10 +44,7 @@ if (chips.length > 0) {
 
 }
 
-
-// =========================
 // PESQUISA
-// =========================
 
 const searchInput = document.querySelector('.search-wrap input');
 
@@ -81,10 +76,7 @@ if (searchInput) {
 
 }
 
-
-// =========================
 // CARRINHO
-// =========================
 
 const orderButtons = document.querySelectorAll('.btn-primary');
 
@@ -141,12 +133,12 @@ if (orderButtons.length > 0) {
 
             showToast('Produto adicionado ao carrinho ☕');
 
-            setTimeout(() => {
+            // setTimeout(() => {
 
-                window.location.href =
-                    '../pages/carrinho.html';
+            //     window.location.href =
+            //         '../pages/carrinho.html';
 
-            }, 1200);
+            // }, 1200);
 
         });
 
@@ -154,10 +146,7 @@ if (orderButtons.length > 0) {
 
 }
 
-
-// =========================
 // FAVORITOS
-// =========================
 
 const favButtons = document.querySelectorAll('.btn-fav');
 
@@ -188,12 +177,12 @@ if (favButtons.length > 0) {
             if (!card) return;
 
             const product = {
-                 name: card.querySelector('.card-name').textContent,
-    price: card.querySelector('.card-price').textContent,
-    image: card.querySelector('.card-img').src,
-    tag: card.querySelector('.tag').textContent,
-    desc: card.querySelector('.card-desc').textContent,
-    tagClass: card.querySelector('.tag').classList[1]
+                name: card.querySelector('.card-name').textContent,
+                price: card.querySelector('.card-price').textContent,
+                image: card.querySelector('.card-img').src,
+                tag: card.querySelector('.tag').textContent,
+                desc: card.querySelector('.card-desc').textContent,
+                tagClass: card.querySelector('.tag').classList[1]
             };
 
             let favorites =
@@ -230,10 +219,7 @@ if (favButtons.length > 0) {
 
 }
 
-
-// =========================
 // TOAST
-// =========================
 
 function showToast(message) {
 

@@ -1,6 +1,4 @@
-// ======================
 // ELEMENTOS
-// ======================
 
 const favoritesContainer =
     document.querySelector('.cards-grid');
@@ -8,17 +6,13 @@ const favoritesContainer =
 const favoritesCount =
     document.querySelector('.fav-count strong');
 
-
-// ======================
 // PEGAR FAVORITOS
-// ======================
+
 
 let favorites =
     JSON.parse(localStorage.getItem('favorites')) || [];
 
-// ======================
 // RENDERIZAR FAVORITOS
-// ======================
 
 function renderFavorites() {
 
@@ -30,9 +24,8 @@ function renderFavorites() {
     favorites =
         JSON.parse(localStorage.getItem('favorites')) || [];
 
-    // ======================
     // VAZIO
-    // ======================
+    
 
     if (favorites.length === 0) {
 
@@ -67,9 +60,8 @@ function renderFavorites() {
 
     }
 
-    // ======================
-    // CONTADOR
-    // ======================
+   
+    // CONTADOR   
 
     if (favoritesCount) {
 
@@ -78,10 +70,9 @@ function renderFavorites() {
 
     }
 
-    // ======================
+    
     // CARDS
-    // ======================
-
+   
     favorites.forEach((product, index) => {
 
         const card =
@@ -137,10 +128,7 @@ function renderFavorites() {
 
 }
 
-
-// ======================
 // REMOVER FAVORITO
-// ======================
 
 function addRemoveEvents() {
 
@@ -171,9 +159,7 @@ function addRemoveEvents() {
 }
 
 
-// ======================
 // TOAST
-// ======================
 
 function showToast(message) {
 
@@ -209,9 +195,6 @@ function showToast(message) {
 
 }
 
-
-// ======================
 // INICIAR
-// ======================
 
 renderFavorites();
