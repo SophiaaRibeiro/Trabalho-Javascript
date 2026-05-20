@@ -254,13 +254,23 @@
 }
 
 .btn-back-home {
-    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    background: var(--gold);
+    padding: 0.9rem 1.5rem;
+    border-radius: 12px;
+
+    border: var(--gold) solid 2px;
     color: var(--brown-deep);
 
     text-decoration: none;
     font-weight: 600;
+}
+
+
+.btn-back-home:hover{
+    background: var(--gold-light);
 }
 
 
