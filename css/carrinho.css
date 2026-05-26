@@ -160,7 +160,7 @@
     position: sticky;
     top: 120px;
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 40px rgba(175, 4, 4, 0.15);
 }
 
 .summary-title {
@@ -182,8 +182,8 @@
     margin-bottom: 1rem;
 }
 
-.summary-row {
-    color: rgba(255,255,255,0.75);
+.summary-row{
+   /* color: #502e1c; */
 }
 
 .summary-total {
@@ -221,23 +221,22 @@
 
     padding: 0.9rem 1rem;
 
-    border: none;
+    border: 1px solid #502e1c;
 
     border-radius: 12px;
 
     outline: none;
 
-    background: rgba(255,255,255,0.08);
+    /* background: rgba(255,255,255,0.08); */
     
-    color: #f8e5e5;
+    color: #727272;
     
     font-size: 0.95rem;
 }
 
 .checkout-form input::placeholder {
-    color: rgba(255,255,255,0.6);
+    /* color: #684722; */
 }
-
 .checkout-form select {
     cursor: pointer;
     

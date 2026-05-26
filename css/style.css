@@ -26,11 +26,11 @@
   --brown-rich: #EAD9BC;
   --brown-mid: #C8A87A;
   --brown-warm: #A0522D;
-  --white: #241208;
+  --white: #502e1c;
   --text-dark: #F5ECD7;
   --text-mid: #C8A87A;
-  --text-light: #8B6040;
-  --shadow-warm: rgba(0,0,0,0.4);
+  --text-light: #dfae89;  
+  --shadow-warm: rgba(3, 1, 1, 0.4);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

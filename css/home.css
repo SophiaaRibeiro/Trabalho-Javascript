@@ -48,7 +48,7 @@
   position: relative;
   z-index: 2;
 
-  max-width: 600px;
+  max-width: 700px;
   padding: 0 8%;
 }
 
@@ -56,7 +56,7 @@
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--gold);
+   color: var(--white);
 
   margin: 1.5rem 0;
 }
@@ -75,8 +75,8 @@
 .description {
   font-size: 1rem;
   line-height: 1.5;
-
-  color: rgba(245,236,215,0.65);
+  color: var(--white);
+  /* color: rgb(66, 51, 15); */
 
   max-width: 420px;
   margin-bottom: 2.5rem;
@@ -195,7 +195,7 @@
 .card-content p {
   font-size: 0.92rem;
   line-height: 1.7;
-  color: var(--text-light);
+  color: var(--text-mid);
   margin-bottom: 1.5rem;
 }
 
@@ -253,7 +253,7 @@
   font-size: 0.95rem;
   line-height: 1.8;
 
-  color: rgba(245,236,215,0.65);
+  color: var(--white);
 
   margin-bottom: 2rem;
 }
@@ -276,7 +276,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
 
-  color: var(--cream);
+  color: #dac1af;
 
   margin-bottom: 1rem;
 }
