@@ -31,7 +31,7 @@ if (!cartContainer) {
         cartContainer.innerHTML = `
 
             <div>
-                <a href="/pages/cardapio.html" class="btn-back-home ">
+                <a href="../pages/cardapio.html" class="btn-back-home ">
                     Voltar
                 </a>
             </div>
