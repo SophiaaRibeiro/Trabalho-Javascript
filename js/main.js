@@ -1,27 +1,68 @@
-const themeToggle = document.getElementById('themeToggle');
+// DARK MODE
 
-themeToggle.addEventListener('click', () => {
+const themeToggle =
+    document.getElementById('themeToggle');
 
-    const html = document.documentElement;
-    const icon = themeToggle.querySelector('i');
+// TEMA SALVO
 
-    if (html.getAttribute('data-theme') === 'light') {
 
-        html.setAttribute('data-theme', 'dark');
+const savedTheme =
+    localStorage.getItem('theme');
 
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
 
-    } else {
+// aplica ao carregar
+if (savedTheme === 'dark') {
 
-        html.setAttribute('data-theme', 'light');
+    document.documentElement.setAttribute(
+        'data-theme',
+        'dark'
+    );
 
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+}
 
-    }
+// TOGGLE
 
-});
+
+if (themeToggle) {
+
+    themeToggle.addEventListener('click', () => {
+
+        const currentTheme =
+            document.documentElement.getAttribute('data-theme');
+
+        // DARK
+        if (currentTheme === 'dark') {
+
+            document.documentElement.setAttribute(
+                'data-theme',
+                'light'
+            );
+
+            localStorage.setItem(
+                'theme',
+                'light'
+            );
+
+        }
+
+        // LIGHT
+        else {
+
+            document.documentElement.setAttribute(
+                'data-theme',
+                'dark'
+            );
+
+            localStorage.setItem(
+                'theme',
+                'dark'
+            );
+
+        }
+
+    });
+
+}
 
 // MENU MOBILE
 
