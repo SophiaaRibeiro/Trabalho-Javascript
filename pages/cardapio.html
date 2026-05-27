@@ -26,8 +26,7 @@
 
         <ul class="nav-links" id="nav-links">
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/cardapio.html" class="active">Cardápio</a></li>           
-            <li><a href="../pages/favoritos.html">Favoritos</a></li>
+            <li><a href="../pages/cardapio.html" class="active">Cardápio</a></li>          
             <li><a href="../pages/quiz.html">Quiz</a></li>
             <li><a href="../pages/contato.html">Contato</a></li>
         </ul>
@@ -38,12 +37,15 @@
                 <i class="fa-solid fa-moon"></i>
             </button>
 
-              <a class="btn-icon"  href="../pages/carrinho.html">
+            <a class="btn-icon" href="../pages/favoritos.html">
+                <i class="fa-solid fa-heart"></i>
+            </a>
+
+            <a class="btn-icon"  href="../pages/carrinho.html">
                 <i class="fa-solid fa-cart-shopping">
                 <!-- <span class="badge show">3</span> -->
                 </i>
-              </a>
-
+            </a>
         </div>
 
     </nav>
@@ -90,23 +92,23 @@
 
                     <div class="filter-chips">
 
-                        <button class="chip active">
+                        <button class="chip active" data-filter="todos">
                             Todos
                         </button>
 
-                        <button class="chip">
+                        <button class="chip" data-filter="espresso">
                             Espresso
                         </button>
 
-                        <button class="chip">
+                        <button class="chip" data-filter="gelado">
                             Gelados
                         </button>
 
-                        <button class="chip">
+                        <button class="chip" data-filter="doce">
                             Doces
                         </button>
 
-                        <button class="chip">
+                        <button class="chip" data-filter="sem-cafe">
                             Sem Café
                         </button>
 
@@ -209,7 +211,7 @@
                     </article>
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="gelados">
+                    <article class="coffee-card" data-category="gelado">
 
                         <img src="../img/ice-coffee.jpg" class ="card-img">
                             
@@ -299,7 +301,7 @@
                     </article>
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="doces">
+                    <article class="coffee-card" data-category="doce">
 
                         <img  src="../img/Caramel-Macchiato.jpg" class="card-img">
                             

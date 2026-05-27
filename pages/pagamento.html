@@ -30,8 +30,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../pages/cardapio.html">Cardápio</a></li>
-                <li><a href="../pages/pagamento.html" class="active">Pagamento</a></li>
-                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/pagamento.html" class="active">Pagamento</a></li>               
                 <li><a href="../pages/quiz.html">Quiz</a></li>
                 <li><a href="../pages/contato.html">Contato</a></li>
                 
@@ -62,57 +61,94 @@
     </header>
 
     <!-- PAGE -->
-    <main class="page">
-        
+   <main class="page">
 
-        <section class="payment-section">           
+    <section class="payment-section">
 
-            <div class="payment-card">
+        <div class="payment-card">
 
-                <div class="payment-header">
+            <!-- HEADER -->
+            <div class="payment-header">
 
-                    <div class="payment-icon">
-                        <i class="fa-solid fa-mug-hot"></i>
-                    </div>
+                <div class="payment-icon">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
 
-                    <h1>
-                        Finalizar Pagamento
-                    </h1>
+                <h1>
+                    Finalizar Pagamento
+                </h1>
+
+                <p>
+                    Complete seu pedido e aproveite sua experiência Velvet Coffee.
+                </p>
+
+            </div>
+
+            <!-- RESUMO -->
+            <div class="payment-summary">
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+
+                    <strong id="subtotalValue">
+                        R$ 0
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Entrega</span>
+
+                    <strong>
+                        R$ 8
+                    </strong>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total</span>
+
+                    <strong id="totalValue">
+                        R$ 0
+                    </strong>
+                </div>
+
+            </div>
+
+            <!-- FORM -->
+            <form
+                class="payment-form"
+                id="paymentForm"
+            >
+
+                <!-- PIX -->
+                <div
+                    id="pixSection"
+                    class="payment-method-box"
+                >
+
+                    <h3>
+                        Pagamento via PIX
+                    </h3>
+
+                    <img
+                        src="../img/scan_me_qr_code.jpg"
+                        class="pix-image"
+                    >
 
                     <p>
-                        Complete seu pedido e aproveite sua experiência Velvet Coffee.
+                        Escaneie o QR Code para pagar.
                     </p>
 
                 </div>
 
-                <!-- RESUMO -->
-                <div class="payment-summary">
+                <!-- CARTÃO -->
+                <div
+                    id="cardSection"
+                    class="payment-method-box"
+                >
 
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <strong id="subtotalValue">
-                            R$ 0
-                        </strong>
-                    </div>
-
-                    <div class="summary-row">
-                        <span>Entrega</span>
-                        <strong>
-                            R$ 8
-                        </strong>
-                    </div>
-
-                    <div class="summary-total">
-                        <span>Total</span>
-                        <strong id="totalValue">
-                            R$ 0
-                        </strong>
-                    </div>
-
-                </div>
-
-                <!-- FORM -->
-                <form class="payment-form" id="paymentForm">
+                    <h3>
+                        Dados do Cartão
+                    </h3>
 
                     <div class="form-group">
 
@@ -123,7 +159,6 @@
                         <input
                             type="text"
                             placeholder="Seu nome"
-                            required
                         >
 
                     </div>
@@ -137,7 +172,6 @@
                         <input
                             type="text"
                             placeholder="0000 0000 0000 0000"
-                            required
                         >
 
                     </div>
@@ -153,7 +187,6 @@
                             <input
                                 type="text"
                                 placeholder="08/29"
-                                required
                             >
 
                         </div>
@@ -167,57 +200,95 @@
                             <input
                                 type="password"
                                 placeholder="123"
-                                required
                             >
 
                         </div>
 
                     </div>
 
-                   
+                </div>
 
-                    <button
-                        type="submit"
-                        class="btn-payment"
-                    >
-                        Confirmar Pedido
-                    </button>
+                <!-- DINHEIRO -->
+                <div
+                    id="cashSection"
+                    class="payment-method-box"
+                >
 
-                     <a href="../pages/carrinho.html" class="btn-back-home" >
-                        Voltar
-                    </a>
-
-                </form>
-
-                <!-- SUCCESS -->
-                <div class="payment-success" id="paymentSuccess">
-
-                    <div class="success-icon">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-
-                    <h2>
-                        Pedido Confirmado!
-                    </h2>
+                    <h3>
+                        Pagamento em Dinheiro
+                    </h3>
 
                     <p>
-                        Seu café já está sendo preparado ☕✨
+                        Seu pedido será pago na entrega ☕
                     </p>
 
-                    <a
-                        href="../index.html"
-                        class="btn-back-home"
-                    >
-                        Voltar para Home
-                    </a>
+                    <div class="order-progress">
+
+                        <div class="progress-step active">
+                            Pedido confirmado
+                        </div>
+
+                        <div class="progress-step">
+                            Preparando café
+                        </div>
+
+                        <div class="progress-step">
+                            Saiu para entrega
+                        </div>
+
+                    </div>
 
                 </div>
 
+                <!-- BOTÕES -->
+                <button
+                    type="submit"
+                    class="btn-payment"
+                >
+                    Confirmar Pedido
+                </button>
+
+                <a
+                    href="../pages/carrinho.html"
+                    class="btn-back-home"
+                >
+                    Voltar
+                </a>
+
+            </form>
+
+            <!-- SUCCESS -->
+            <div
+                class="payment-success"
+                id="paymentSuccess"
+            >
+
+                <div class="success-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <h2>
+                    Pedido Confirmado!
+                </h2>
+
+                <p>
+                    Seu café já está sendo preparado ☕✨
+                </p>
+
+                <a
+                    href="../index.html"
+                    class="btn-back-home"
+                >
+                    Voltar para Home
+                </a>
+
             </div>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
+
+</main>
 
     <script src="../js/pagamentos.js"></script>
     <script src="../js/main.js"></script>
