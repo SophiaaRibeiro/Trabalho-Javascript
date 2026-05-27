@@ -1,4 +1,6 @@
-// pagamento.js
+// ======================
+// ELEMENTOS
+// ======================
 
 const subtotalValue =
     document.getElementById('subtotalValue');
@@ -11,6 +13,17 @@ const paymentForm =
 
 const paymentSuccess =
     document.getElementById('paymentSuccess');
+
+
+// NOVAS SECTIONS
+const pixSection =
+    document.getElementById('pixSection');
+
+const cardSection =
+    document.getElementById('cardSection');
+
+const cashSection =
+    document.getElementById('cashSection');
 
 
 // ======================
@@ -52,7 +65,55 @@ totalValue.textContent =
 
 
 // ======================
-// FINALIZAR
+// FORMA DE PAGAMENTO
+// ======================
+
+const paymentMethod =
+    localStorage.getItem('paymentMethod');
+
+
+// esconde tudo primeiro
+pixSection.style.display = 'none';
+cardSection.style.display = 'none';
+cashSection.style.display = 'none';
+
+
+// ======================
+// PIX
+// ======================
+
+if (paymentMethod === 'pix') {
+
+    pixSection.style.display = 'block';
+
+}
+
+
+// ======================
+// CARTÃO
+// ======================
+
+if (paymentMethod === 'cartao') {
+
+    cardSection.style.display = 'block';
+
+}
+
+
+// ======================
+// DINHEIRO
+// ======================
+
+if (paymentMethod === 'dinheiro') {
+
+    cashSection.style.display = 'block';
+
+}
+
+
+
+// ======================
+// FINALIZAR PEDIDO
 // ======================
 
 paymentForm.addEventListener('submit', (event) => {

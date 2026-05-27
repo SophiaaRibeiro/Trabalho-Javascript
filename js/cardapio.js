@@ -9,15 +9,19 @@ if (chips.length > 0) {
 
         chip.addEventListener('click', () => {
 
-            chips.forEach(btn => btn.classList.remove('active'));
+            chips.forEach(btn =>
+                btn.classList.remove('active')
+            );
 
             chip.classList.add('active');
 
-            const category = chip.textContent.trim().toLowerCase();
+            const category =
+                chip.dataset.filter;
 
             cards.forEach(card => {
 
-               const tag = card.dataset.category;
+                const tag =
+                    card.dataset.category;
 
                 if (category === 'todos') {
 
@@ -26,7 +30,7 @@ if (chips.length > 0) {
 
                 }
 
-                if (tag.includes(category)) {
+                if (tag === category) {
 
                     card.style.display = 'block';
 
@@ -146,9 +150,62 @@ if (orderButtons.length > 0) {
 
 }
 
+// ======================
 // FAVORITOS
+// ======================
 
-const favButtons = document.querySelectorAll('.btn-fav');
+const favButtons =
+    document.querySelectorAll('.btn-fav');
+
+
+// ======================
+// PEGAR FAVORITOS
+// ======================
+
+let favorites =
+    JSON.parse(
+        localStorage.getItem('favorites')
+    ) || [];
+
+
+// ======================
+// VERIFICAR FAVORITOS
+// ======================
+
+favButtons.forEach(button => {
+
+    const card =
+        button.closest('.coffee-card');
+
+    if (!card) return;
+
+    const coffeeName =
+        card.querySelector('.card-name')
+        .textContent;
+
+    const icon =
+        button.querySelector('i');
+
+    const exists = favorites.find(
+        item => item.name === coffeeName
+    );
+
+    // já favoritado
+    if (exists) {
+
+        button.classList.add('active');
+
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid');
+
+    }
+
+});
+
+
+// ======================
+// EVENTO FAVORITAR
+// ======================
 
 if (favButtons.length > 0) {
 
@@ -156,58 +213,89 @@ if (favButtons.length > 0) {
 
         button.addEventListener('click', () => {
 
-            const icon = button.querySelector('i');
+            const icon =
+                button.querySelector('i');
 
             button.classList.toggle('active');
+
+            const card =
+                button.closest('.coffee-card');
+
+            if (!card) return;
+
+            const product = {
+
+                name:
+                    card.querySelector('.card-name')
+                    .textContent,
+
+                price:
+                    card.querySelector('.card-price')
+                    .textContent,
+
+                image:
+                    card.querySelector('.card-img')
+                    .src,
+
+                tag:
+                    card.querySelector('.tag')
+                    .textContent,
+
+                desc:
+                    card.querySelector('.card-desc')
+                    .textContent,
+
+                tagClass:
+                    card.querySelector('.tag')
+                    .classList[1]
+
+            };
+
+            // ======================
+            // ADICIONAR
+            // ======================
 
             if (button.classList.contains('active')) {
 
                 icon.classList.remove('fa-regular');
                 icon.classList.add('fa-solid');
 
-            } else {
+                const exists = favorites.find(
+                    item => item.name === product.name
+                );
 
-                icon.classList.remove('fa-solid');
-                icon.classList.add('fa-regular');
+                if (!exists) {
+
+                    favorites.push(product);
+
+                }
+
+                showToast(
+                    'Adicionado aos favoritos ❤️'
+                );
 
             }
 
-            const card = button.closest('.coffee-card');
+            // ======================
+            // REMOVER
+            // ======================
 
-            if (!card) return;
+            else {
 
-            const product = {
-                name: card.querySelector('.card-name').textContent,
-                price: card.querySelector('.card-price').textContent,
-                image: card.querySelector('.card-img').src,
-                tag: card.querySelector('.tag').textContent,
-                desc: card.querySelector('.card-desc').textContent,
-                tagClass: card.querySelector('.tag').classList[1]
-            };
-
-            let favorites =
-                JSON.parse(localStorage.getItem('favorites')) || [];
-
-            const exists = favorites.find(
-                item => item.name === product.name
-            );
-
-            if (exists) {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
 
                 favorites = favorites.filter(
                     item => item.name !== product.name
                 );
 
-                showToast('Removido dos favoritos 💔');
-
-            } else {
-
-                favorites.push(product);
-
-                showToast('Adicionado aos favoritos ❤️');
+                showToast(
+                    'Removido dos favoritos 💔'
+                );
 
             }
 
+            // salva
             localStorage.setItem(
                 'favorites',
                 JSON.stringify(favorites)

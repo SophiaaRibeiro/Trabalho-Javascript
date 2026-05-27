@@ -254,32 +254,64 @@ if (!cartContainer) {
 
 }
 
+
+// ======================
 // CHECKOUT
+// ======================
 
 const checkoutButton =
     document.querySelector('.checkout-btn');
 
+const paymentMethod =
+    document.getElementById('paymentMethod');
+
 if (checkoutButton) {
 
-    checkoutButton.addEventListener('click', () => {
+    checkoutButton.addEventListener('click', (event) => {
 
-        if (cart.length === 0) {
+        event.preventDefault();
 
-            alert('Seu carrinho está vazio ☕');
+        // salva forma de pagamento
+        localStorage.setItem(
+            'paymentMethod',
+            paymentMethod.value
+        );
 
-            return;
-
-        }
-
-        alert('Pedido realizado com sucesso! ☕✨');
-
-        // limpa carrinho
-        localStorage.removeItem('cart');
-
-        cart = [];
-
-        renderCart();
+        // vai para pagamento
+        window.location.href =
+            '../pages/pagamento.html';
 
     });
 
 }
+
+
+// CHECKOUT
+
+// const checkoutButton =
+//     document.querySelector('.checkout-btn');
+
+// if (checkoutButton) {
+
+//     checkoutButton.addEventListener('click', () => {
+
+//         if (cart.length === 0) {
+
+//             alert('Seu carrinho está vazio ☕');
+
+//             return;
+
+//         }
+
+//         alert('Pedido realizado com sucesso! ☕✨');
+
+//         // limpa carrinho
+//         localStorage.removeItem('cart');
+
+//         cart = [];
+
+//         renderCart();
+
+//     });
+
+// }
