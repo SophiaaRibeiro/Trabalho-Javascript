@@ -285,20 +285,14 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-decoration: none;
-
     padding: 1rem;
-
     border-radius: 14px;
-
     background: var(--brown-rich);
-
     color: var(--white);
-
     font-weight: 600;
-
     transition: 0.3s;
+    margin-top: 25px; 
 }
 
 .btn-back-home:hover {
