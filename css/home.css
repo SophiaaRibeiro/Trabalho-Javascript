@@ -1,7 +1,7 @@
-/* ─── HOME / HERO ─── */
+/* ─── HOME / HERO ─── var(--brown-deep) */
 .hero {
   min-height: 100vh;
-  background: var(--brown-deep);
+  background: #1C0F05 ; 
   display: flex;
   align-items: center;
   position: relative;
@@ -47,7 +47,6 @@
 .hero-content {
   position: relative;
   z-index: 2;
-
   max-width: 700px;
   padding: 0 8%;
 }
@@ -56,8 +55,7 @@
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-   color: var(--white);
-
+  color: #f8d06b;
   margin: 1.5rem 0;
 }
 
@@ -66,17 +64,15 @@
   font-size: clamp(2.8rem, 6vw, 5rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
-
-  color: var(--cream);
-
+  color: #F5ECD7;
   margin-bottom: 1.7rem;
 }
 
 .description {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--white);
-  /* color: rgb(66, 51, 15); */
+  color: #f5ecd7;
+  /* color: rgb(66, 51, 15);  var(--white)*/
 
   max-width: 420px;
   margin-bottom: 2.5rem;
@@ -217,7 +213,7 @@
 
 /* ─── EXPERIENCE ─── */
 .experience {
-  background: var(--brown-deep);
+  background: rgba(61, 31, 13, 0.8);;
 
   padding: 6rem 8%;
 
@@ -242,7 +238,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 4vw, 3rem);
 
-  color: var(--cream);
+  color: #f5ecd7;
 
   line-height: 1.2;
 
@@ -253,7 +249,7 @@
   font-size: 0.95rem;
   line-height: 1.8;
 
-  color: var(--white);
+  color: #f5ecd7;
 
   margin-bottom: 2rem;
 }
@@ -299,8 +295,16 @@
     align-items: flex-start;
   }
 
+  .experience-image{
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
   .experience-image img {
-    height: 380px;
+    height: 380px;   
+    
   }
 
 }

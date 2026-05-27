@@ -149,9 +149,9 @@
 /* ───────── SUMMARY ───────── */
 
 .cart-summary {
-    background: var(--brown-deep);
+    background: #311607  ;
     width: 500px;
-    color: var(--white);
+    color: #f5ecd7;
 
     padding: 2rem;
 
@@ -180,10 +180,6 @@
     align-items: center;
 
     margin-bottom: 1rem;
-}
-
-.summary-row{
-   /* color: #502e1c; */
 }
 
 .summary-total {
@@ -227,19 +223,90 @@
 
     outline: none;
 
-    /* background: rgba(255,255,255,0.08); */
+    background: #f5ecd7;
     
     color: #727272;
     
     font-size: 0.95rem;
 }
 
-.checkout-form input::placeholder {
-    /* color: #684722; */
-}
 .checkout-form select {
     cursor: pointer;
     
+}
+
+/* ======================
+   PAYMENT METHOD
+====================== */
+
+select {
+    width: 100%;
+
+    padding: 1rem;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: var(--cream);
+
+    color: var(--text-dark);
+
+    font-size: 1rem;
+}
+
+/* ======================
+   PIX
+====================== */
+
+.pix-area {
+    display: none;
+
+    text-align: center;
+
+    margin-top: 2rem;
+}
+
+.pix-area img {
+    width: 220px;
+
+    border-radius: 16px;
+
+    margin-bottom: 1rem;
+}
+
+/* ======================
+   MONEY
+====================== */
+
+.money-area {
+    display: none;
+
+    margin-top: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 14px;
+
+    background: rgba(255,255,255,0.1);
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    margin-top: 1rem;
+}
+
+.progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--gold);
+
+    transition: 0.4s;
 }
 
 /* ───────── BUTTON ───────── */
