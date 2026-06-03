@@ -1,16 +1,14 @@
-// DARK MODE
-
 const themeToggle =
     document.getElementById('themeToggle');
 
-// TEMA SALVO
-
+const icon =
+    themeToggle?.querySelector('i');
 
 const savedTheme =
     localStorage.getItem('theme');
 
 
-// aplica ao carregar
+// aplica tema salvo
 if (savedTheme === 'dark') {
 
     document.documentElement.setAttribute(
@@ -18,9 +16,14 @@ if (savedTheme === 'dark') {
         'dark'
     );
 
-}
+    if (icon) {
 
-// TOGGLE
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+
+    }
+
+}
 
 
 if (themeToggle) {
@@ -30,7 +33,7 @@ if (themeToggle) {
         const currentTheme =
             document.documentElement.getAttribute('data-theme');
 
-        // DARK
+        // DARK -> LIGHT
         if (currentTheme === 'dark') {
 
             document.documentElement.setAttribute(
@@ -43,9 +46,16 @@ if (themeToggle) {
                 'light'
             );
 
+            if (icon) {
+
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+
+            }
+
         }
 
-        // LIGHT
+        // LIGHT -> DARK
         else {
 
             document.documentElement.setAttribute(
@@ -57,6 +67,13 @@ if (themeToggle) {
                 'theme',
                 'dark'
             );
+
+            if (icon) {
+
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+
+            }
 
         }
 

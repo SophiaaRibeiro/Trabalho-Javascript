@@ -213,6 +213,16 @@ if (favButtons.length > 0) {
 
         button.addEventListener('click', () => {
 
+            const usuarioLogado = getUsuarioLogado ? getUsuarioLogado() : null;
+
+            if (!usuarioLogado) {
+                showToast('Faça login para favoritar ☕');
+                setTimeout(() => {
+                    window.location.href = '../pages/login.html';
+                }, 1500);
+                return;
+            }
+
             const icon =
                 button.querySelector('i');
 
