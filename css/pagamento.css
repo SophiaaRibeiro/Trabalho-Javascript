@@ -379,8 +379,66 @@ select {
     }
 
     .btn-back-home {
-
         margin-top: 30px;
     }
-
 }
+
+/* ─── ENDEREÇO / CARTÃO (pagamento) ─── */
+
+#addressSection h3,
+#cardSection h3,
+#pixSection h3,
+#cashSection h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--brown-deep);
+}
+
+#addressSection h3 i,
+#cardSection h3 i { color: var(--gold); }
+
+#addressSection .form-group label,
+#cardSection .form-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    display: block;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+#addressSection .form-group input,
+#cardSection .form-group input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 12px;
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.25s;
+}
+
+#addressSection .form-group input:focus,
+#cardSection .form-group input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,146,42,0.15);
+}
+
+/* Linha de desconto verde */
+#payRowDesconto .desconto-value { color: #27ae60; font-weight: 700; }
+#payRowDesconto .cupom-badge {
+    font-size: 0.7rem;
+    background: rgba(200,146,42,0.12);
+    color: var(--gold);
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+}
+

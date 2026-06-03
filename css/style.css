@@ -868,6 +868,30 @@ textarea {
     color: var(--brown-deep);
 }
 
+.mobile-auth {
+    display: none;
+}
+
+.mobile-only{
+    display: none;
+}
+
+@media (max-width: 950px) {
+
+    .nav-actions .nav-auth-btn {
+        display: none;
+    }
+
+    .mobile-auth {
+        display: block;
+    }
+
+    .mobile-only{
+        display: block;
+    }
+
+}
+
 /* MOBILE */
 
 @media (max-width: 768px){

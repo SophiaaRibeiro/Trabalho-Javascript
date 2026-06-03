@@ -400,3 +400,107 @@ select {
     }
 
 }
+
+/* ─── SMART CHECKOUT OVERRIDES (dentro do fundo escuro) ─── */
+
+.cart-summary .checkout-section-title {
+    color: rgba(245, 236, 215, 0.6);
+}
+
+.cart-summary .checkout-input,
+.cart-summary .checkout-select {
+    background: rgba(245,236,215,0.08);
+    border-color: rgba(245,236,215,0.2);
+    color: #f5ecd7;
+}
+
+.cart-summary .checkout-input::placeholder {
+    color: rgba(245,236,215,0.4);
+}
+
+.cart-summary .checkout-input:focus,
+.cart-summary .checkout-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,146,42,0.2);
+}
+
+.cart-summary .saved-data-card {
+    background: rgba(200,146,42,0.12);
+    border-color: var(--gold);
+}
+
+.cart-summary .saved-data-info {
+    color: #f5ecd7;
+}
+
+.cart-summary .cartao-checkout-item {
+    background: rgba(245,236,215,0.06);
+    border-color: rgba(245,236,215,0.15);
+}
+
+.cart-summary .cartao-checkout-item.selected {
+    background: rgba(200,146,42,0.15);
+    border-color: var(--gold);
+}
+
+.cart-summary .cartao-checkout-num {
+    color: #f5ecd7;
+}
+
+.cart-summary .cartao-checkout-nome {
+    color: rgba(245,236,215,0.6);
+}
+
+.cart-summary .btn-add-new {
+    border-color: rgba(245,236,215,0.25);
+    color: rgba(245,236,215,0.6);
+}
+
+.cart-summary .btn-add-new:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.cart-summary .btn-change-saved {
+    border-color: rgba(245,236,215,0.35);
+    color: rgba(245,236,215,0.6);
+}
+
+.cart-summary .btn-change-saved:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.cart-summary .checkout-select option {
+    background: #311607;
+    color: #f5ecd7;
+}
+
+/* Cupom dentro do carrinho escuro */
+.cart-summary .btn-apply-coupon {
+    background: var(--gold);
+    color: var(--brown-deep);
+}
+
+.cart-summary .coupon-input::placeholder {
+    color: rgba(245,236,215,0.4);
+}
+
+.cart-summary .coupon-input {
+    background: rgba(245,236,215,0.08);
+    border-color: rgba(245,236,215,0.2);
+    color: #f5ecd7;
+}
+
+.cart-summary .coupon-ok { color: #2ecc71; }
+.cart-summary .coupon-err { color: #ff6b6b; }
+
+.cart-summary .cupom-badge {
+    background: rgba(200,146,42,0.25);
+    color: var(--gold-light);
+}
+
+.cart-summary #rowDesconto span:first-child {
+    color: rgba(245,236,215,0.8);
+}
+
