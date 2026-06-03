@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reembolso | Velvet Coffee</title>
+    <meta name="description" content="Solicite o reembolso de um pedido Velvet Coffee.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="icon" href="../img/logo-velvet.png" type="image/png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button class="menu-mobile" id="menuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html" class="nav-logo">Velvet<span>Coffee</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                <!-- <li><a href="../pages/carrinho.html">Carrinho</a></li> -->
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- <a class="btn-icon" href="../pages/login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a> -->
+                <a class="btn-icon" href="../pages/carrinho.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="section">
+            <div class="container">
+
+                <div class="section-header">
+                    <h1 class="section-title">Solicitar Reembolso</h1>
+                    <div class="section-divider"></div>
+                    <p class="section-sub">Selecione o pedido e descreva o problema para iniciarmos o processo de reembolso.</p>
+                </div>
+
+                <!-- FORMULÁRIO -->
+                <div class="reembolso-wrap" id="reembolsoWrap">
+                    <div class="perfil-card">
+
+                        <form id="reembolsoForm">
+
+                            <div class="form-group">
+                                <label for="pedidoSelect">Código do Pedido</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-receipt input-icon"></i>
+                                    <select id="pedidoSelect" class="input-select">
+                                        <option value="">Selecione um pedido...</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Detalhes do pedido selecionado -->
+                            <div class="pedido-detalhe" id="pedidoDetalhe" style="display:none;"></div>
+
+                            <div class="form-group">
+                                <label for="motivoSelect">Motivo do Reembolso</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-circle-exclamation input-icon"></i>
+                                    <select id="motivoSelect" class="input-select">
+                                        <option value="">Selecione o motivo...</option>
+                                        <option value="defeito">Produto com defeito</option>
+                                        <option value="incorreto">Pedido incorreto</option>
+                                        <option value="nao-recebi">Não recebi o pedido</option>
+                                        <option value="arrependimento">Arrependimento de compra</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="descricaoProblema">Descrição do problema</label>
+                                <textarea
+                                    id="descricaoProblema"
+                                    rows="5"
+                                    placeholder="Descreva com detalhes o que aconteceu com seu pedido..."
+                                    class="input-textarea"
+                                ></textarea>
+                            </div>
+
+                            <span class="form-error" id="reembolsoError"></span>
+
+                            <button type="submit" class="btn-auth">
+                                <span>Enviar Solicitação</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- SUCESSO -->
+                <div class="reembolso-sucesso" id="reembolsoSucesso" style="display:none;">
+                    <div class="perfil-card" style="text-align:center;">
+                        <div class="auth-logo-icon auth-logo-icon--success" style="margin:0 auto 1.5rem;">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h2 style="font-family:'Playfair Display',serif; margin-bottom:0.5rem;">Solicitação Enviada!</h2>
+                        <p style="color:var(--text-light); margin-bottom:1.5rem;">Seu reembolso está sendo analisado.</p>
+                        <div class="protocolo-box">
+                            Protocolo: <strong id="protocoloNumero"></strong>
+                        </div>
+                        <p style="color:var(--text-light); font-size:0.85rem; margin-top:1rem;">
+                            Guarde este número de protocolo para acompanhar sua solicitação.
+                        </p>
+                        <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                            <a href="../pages/perfil.html" class="btn-auth" style="text-decoration:none;">
+                                <span>Ver Histórico</span>
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </a>
+                            <a href="../index.html" class="btn-auth btn-auth--outline" style="text-decoration:none;">
+                                <span>Voltar ao Início</span>
+                                <i class="fa-solid fa-house"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USUÁRIO NÃO LOGADO -->
+                <div class="reembolso-login" id="reembolsoLogin" style="display:none;">
+                    <div class="perfil-card" style="text-align:center;">
+                        <div class="auth-logo-icon" style="margin:0 auto 1.5rem;">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h2 style="font-family:'Playfair Display',serif; margin-bottom:0.5rem;">Acesso Restrito</h2>
+                        <p style="color:var(--text-light); margin-bottom:1.5rem;">Você precisa estar logado para solicitar um reembolso.</p>
+                        <a href="../pages/login.html" class="btn-auth" style="text-decoration:none; display:inline-flex;">
+                            <span>Fazer Login</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/reembolso.js"></script>
+</body>
+</html>

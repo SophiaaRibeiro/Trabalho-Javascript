@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Velvet Coffee</title>
+    <meta name="description" content="Crie sua conta Velvet Coffee e aproveite todas as funcionalidades.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="icon" href="../img/logo-velvet.png" type="image/png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button class="menu-mobile" id="menuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html" class="nav-logo">Velvet<span>Coffee</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                <!-- <li><a href="../pages/carrinho.html">Carrinho</a></li> -->
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- <a class="btn-icon" href="../pages/login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a> -->
+                <a class="btn-icon" href="../pages/carrinho.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page auth-page">
+        <div class="auth-container auth-container--wide">
+
+            <div class="auth-brand">
+                <div class="auth-logo-icon">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <h1>Criar Conta</h1>
+                <p>Junte-se à comunidade Velvet Coffee</p>
+            </div>
+
+            <form class="auth-form" id="cadastroForm" novalidate>
+
+                <div class="form-group">
+                    <label for="cadNome">Nome completo</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input
+                            type="text"
+                            id="cadNome"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                        >
+                    </div>
+                    <span class="field-error" id="nomeError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cadEmail">E-mail</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input
+                            type="email"
+                            id="cadEmail"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                        >
+                    </div>
+                    <span class="field-error" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cadSenha">Senha</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input
+                            type="password"
+                            id="cadSenha"
+                            placeholder="Mínimo 6 caracteres"
+                            autocomplete="new-password"
+                        >
+                        <button type="button" class="btn-toggle-pass" id="toggleSenha">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="field-error" id="senhaError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cadConfirmar">Confirmar senha</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input
+                            type="password"
+                            id="cadConfirmar"
+                            placeholder="Repita a senha"
+                            autocomplete="new-password"
+                        >
+                    </div>
+                    <span class="field-error" id="confirmarError"></span>
+                </div>
+
+                <span class="form-error" id="cadastroError"></span>
+
+                <button type="submit" class="btn-auth" id="btnCadastrar">
+                    <span>Criar Conta</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Já tem conta?
+                <a href="../pages/login.html" class="auth-link">Entrar</a>
+            </p>
+
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/cadastro.js"></script>
+</body>
+</html>

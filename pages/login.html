@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Velvet Coffee</title>
+    <meta name="description" content="Entre na sua conta Velvet Coffee para favoritar cafés, acompanhar pedidos e muito mais.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="icon" href="../img/logo-velvet.png" type="image/png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button class="menu-mobile" id="menuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+       <nav>
+            <a href="../index.html" class="nav-logo">Velvet<span>Coffee</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                <!-- <li><a href="../pages/carrinho.html">Carrinho</a></li> -->
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- <a class="btn-icon" href="../pages/login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a> -->
+                <a class="btn-icon" href="../pages/carrinho.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page auth-page">
+        <div class="auth-container">
+
+            <div class="auth-brand">
+                <div class="auth-logo-icon">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <h1>Bem-vindo de volta</h1>
+                <p>Entre na sua conta para continuar</p>
+            </div>
+
+            <form class="auth-form" id="loginForm" novalidate>
+
+                <div class="form-group">
+                    <label for="loginEmail">E-mail</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                        >
+                    </div>
+                    <span class="field-error" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginSenha">Senha</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input
+                            type="password"
+                            id="loginSenha"
+                            placeholder="Sua senha"
+                            autocomplete="current-password"
+                        >
+                        <button type="button" class="btn-toggle-pass" id="toggleSenha">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="field-error" id="senhaError"></span>
+                </div>
+
+                <div class="auth-links-row">
+                    <a href="../pages/esqueci-senha.html" class="auth-link">Esqueci minha senha</a>
+                </div>
+
+                <span class="form-error" id="loginError"></span>
+
+                <button type="submit" class="btn-auth" id="btnLogin">
+                    <span>Entrar</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Não tem conta?
+                <a href="../pages/cadastro.html" class="auth-link">Cadastre-se grátis</a>
+            </p>
+
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha | Velvet Coffee</title>
+    <meta name="description" content="Recupere o acesso à sua conta Velvet Coffee.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="icon" href="../img/logo-velvet.png" type="image/png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button class="menu-mobile" id="menuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html" class="nav-logo">Velvet<span>Coffee</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                <!-- <li><a href="../pages/carrinho.html">Carrinho</a></li> -->
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- <a class="btn-icon" href="../pages/login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a> -->
+                <a class="btn-icon" href="../pages/carrinho.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page auth-page">
+        <div class="auth-container">
+
+            <!-- FORMULÁRIO -->
+            <div id="formSection">
+                <div class="auth-brand">
+                    <div class="auth-logo-icon">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h1>Recuperar Senha</h1>
+                    <p>Digite seu e-mail cadastrado para recuperar o acesso</p>
+                </div>
+
+                <form class="auth-form" id="esqueciForm" novalidate>
+                    <div class="form-group">
+                        <label for="esqueciEmail">E-mail</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-envelope input-icon"></i>
+                            <input
+                                type="email"
+                                id="esqueciEmail"
+                                placeholder="seu@email.com"
+                            >
+                        </div>
+                        <span class="field-error" id="emailError"></span>
+                    </div>
+
+                    <span class="form-error" id="esqueciError"></span>
+
+                    <button type="submit" class="btn-auth">
+                        <span>Recuperar Acesso</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <p class="auth-switch">
+                    Lembrou a senha?
+                    <a href="../pages/login.html" class="auth-link">Entrar</a>
+                </p>
+            </div>
+
+            <!-- RESULTADO -->
+            <div id="resultSection" class="auth-result" style="display:none;">
+                <div class="auth-logo-icon auth-logo-icon--success">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h2>Senha encontrada!</h2>
+                <p>Sua senha temporária é:</p>
+                <div class="temp-password-box" id="senhaTemp"></div>
+                <p class="temp-hint">Use essa senha para entrar e depois altere no seu perfil.</p>
+                <a href="../pages/login.html" class="btn-auth" style="display:inline-flex; text-decoration:none; margin-top:1.5rem;">
+                    <span>Ir para o Login</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/esqueci-senha.js"></script>
+</body>
+</html>

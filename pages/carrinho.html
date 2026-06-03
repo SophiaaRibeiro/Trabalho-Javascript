@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/carrinho.css">
+    <link rel="stylesheet" href="../css/auth.css">
 
     <link rel="icon"
         href="../img/logo-velvet.png"
@@ -28,68 +29,26 @@
         </button>
 
         <nav>
-
-            <a href="../index.html" class="nav-logo">
-                Velvet<span>Coffee</span>
-            </a>
-
+            <a href="../index.html" class="nav-logo">Velvet<span>Coffee</span></a>
             <ul class="nav-links" id="nav-links">
-
-                <li>
-                    <a href="../index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../pages/cardapio.html">
-                        Cardápio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../pages/carrinho.html" class="active">
-                        Carrinho
-                    </a>
-                </li>
-                
-
-                <li>
-                    <a href="../pages/quiz.html">
-                        Quiz
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../pages/contato.html">
-                        Contato
-                    </a>
-                </li>
-
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                <li><a href="../pages/carrinho.html" class="active">Carrinho</a></li>
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
             </ul>
-
             <div class="nav-actions">
-
                 <button class="btn-icon" id="themeToggle">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
-                <a class="btn-icon"
-                    href="../pages/favoritos.html">
-
-                    <i class="fa-solid fa-heart"></i>
-
-                </a>
-
-                <a class="btn-icon"
-                    href="../pages/carrinho.html">
-
+                <!-- <a class="btn-icon" href="../pages/login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a> -->
+                <a class="btn-icon" href="../pages/carrinho.html" class="active">
                     <i class="fa-solid fa-cart-shopping"></i>
-
                 </a>
-
             </div>
-
         </nav>
 
     </header>
@@ -101,19 +60,10 @@
 
             <div class="container">
 
-                <!-- HEADER -->
                 <div class="section-header">
-
-                    <h1 class="section-title">
-                        Seu Carrinho
-                    </h1>
-
+                    <h1 class="section-title">Seu Carrinho</h1>
                     <div class="section-divider"></div>
-
-                    <p class="section-sub">
-                        Confira seus pedidos antes de finalizar a compra.
-                    </p>
-
+                    <p class="section-sub">Confira seus pedidos antes de finalizar a compra.</p>
                 </div>
 
                 <!-- LAYOUT -->
@@ -121,21 +71,17 @@
 
                     <!-- ITENS -->
                     <div class="cart-items">
-
-                        <!-- JS renderiza os produtos aqui -->
-
+                        <!-- JS renderiza aqui -->
                     </div>
 
                     <!-- RESUMO -->
                     <aside class="cart-summary">
 
-                        <h2 class="summary-title">
-                            Resumo do Pedido
-                        </h2>
+                        <h2 class="summary-title">Resumo do Pedido</h2>
 
                         <div class="summary-row">
                             <span>Subtotal</span>
-                            <span>R$ 0</span>
+                            <span id="summarySubtotal">R$ 0</span>
                         </div>
 
                         <div class="summary-row">
@@ -143,47 +89,58 @@
                             <span>R$ 8</span>
                         </div>
 
-                        <div class="summary-row">
-                            <span>Desconto</span>
-                            <span>- R$ 0</span>
+                        <div class="summary-row" id="rowDesconto" style="display:none;">
+                            <span>Cupom <span id="cupomNome" class="cupom-badge"></span></span>
+                            <span id="summaryDesconto" class="desconto-value">- R$ 0</span>
                         </div>
 
                         <div class="summary-total">
                             <span>Total</span>
-                            <strong>R$ 0</strong>
+                            <strong id="summaryTotal">R$ 0</strong>
                         </div>
 
                         <!-- CHECKOUT -->
-                        <div class="checkout-form">
+                        <div class="checkout-form" id="checkoutForm">
 
-                            <input
-                                type="text"
-                                placeholder="Digite seu endereço"
-                            >
+                            <!-- CUPOM -->
+                            <div class="checkout-section">
+                                <h3 class="checkout-section-title">
+                                    <i class="fa-solid fa-tag"></i> Cupom de Desconto
+                                </h3>
+                                <div class="coupon-wrap">
+                                    <input
+                                        type="text"
+                                        id="cupomInput"
+                                        placeholder="Ex: VELVET10"
+                                        class="checkout-input coupon-input"
+                                        autocomplete="off"
+                                    >
+                                    <button type="button" id="btnAplicarCupom" class="btn-apply-coupon">
+                                        Aplicar
+                                    </button>
+                                </div>
+                                <div class="coupon-feedback" id="cupomFeedback"></div>
+                            </div>
 
-                            <!-- SELECT ATUALIZADO -->
-                            <select id="paymentMethod">
+                            <!-- FORMA DE PAGAMENTO -->
+                            <div class="checkout-section">
+                                <h3 class="checkout-section-title">
+                                    <i class="fa-solid fa-credit-card"></i> Forma de Pagamento
+                                </h3>
+                                <select id="paymentMethod" class="checkout-select">
+                                    <option value="cartao">Cartão de Crédito</option>
+                                    <option value="pix">PIX</option>
+                                    <option value="dinheiro">Dinheiro</option>
+                                </select>
+                            </div>
 
-                                <option value="cartao">
-                                    Cartão de Crédito
-                                </option>
-
-                                <option value="pix">
-                                    PIX
-                                </option>
-
-                                <option value="dinheiro">
-                                    Dinheiro
-                                </option>
-
-                            </select>
-
-                            <a
+                            <button
                                 class="btn btn-primary checkout-btn"
-                                href="../pages/pagamento.html"
+                                id="checkoutBtn"
                             >
-                                Finalizar Pedido
-                            </a>
+                                Ir para Pagamento
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
 
                         </div>
 
@@ -197,7 +154,10 @@
 
     </main>
 
+    <div id="toast-container"></div>
+
     <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
     <script src="../js/cardapio.js"></script>
     <script src="../js/favoritos.js"></script>
     <script src="../js/carrinho.js"></script>

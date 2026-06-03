@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | Velvet Coffee</title>
+    <meta name="description" content="Gerencie seus dados pessoais, cartões salvos e histórico de pedidos na Velvet Coffee.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="icon" href="../img/logo-velvet.png" type="image/png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <button class="menu-mobile" id="menuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../index.html" class="nav-logo">Velvet<span>Coffee</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/cardapio.html">Cardápio</a></li>
+                <!-- <li><a href="../pages/carrinho.html">Carrinho</a></li> -->
+                <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                <li><a href="../pages/quiz.html">Quiz</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- <a class="btn-icon" href="../pages/login.html">
+                    <i class="fa-solid fa-user"></i>
+                </a> -->
+                <a class="btn-icon" href="../pages/carrinho.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="section">
+            <div class="container">
+
+                <div class="section-header">
+                    <h1 class="section-title">Meu Perfil</h1>
+                    <div class="section-divider"></div>
+                    <p class="section-sub" id="perfilSaudacao">Olá! Gerencie seus dados aqui.</p>
+                </div>
+
+                <!-- ABAS -->
+                <div class="perfil-tabs">
+                    <button class="perfil-tab active" data-tab="dados" id="tabDados">
+                        <i class="fa-solid fa-user"></i> Dados Pessoais
+                    </button>
+                    <button class="perfil-tab" data-tab="pagamentos" id="tabPagamentos">
+                        <i class="fa-solid fa-credit-card"></i> Pagamentos
+                    </button>
+                    <button class="perfil-tab" data-tab="historico" id="tabHistorico">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Histórico
+                    </button>
+                </div>
+
+                <!-- ABA: DADOS PESSOAIS -->
+                <div class="perfil-panel active" id="panelDados">
+                    <div class="perfil-card">
+                        <h2 class="perfil-card-title">
+                            <i class="fa-solid fa-id-card"></i> Informações Pessoais
+                        </h2>
+                        <form id="formDados">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pNome">Nome completo</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-user input-icon"></i>
+                                        <input type="text" id="pNome" placeholder="Seu nome">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pEmail">E-mail</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-envelope input-icon"></i>
+                                        <input type="email" id="pEmail" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pTelefone">Telefone</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-phone input-icon"></i>
+                                    <input type="tel" id="pTelefone" placeholder="(11) 99999-9999">
+                                </div>
+                            </div>
+
+                            <div class="perfil-section-divider">
+                                <span>Endereço de Entrega</span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pCep">CEP</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-location-dot input-icon"></i>
+                                        <input type="text" id="pCep" placeholder="00000-000">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pEstado">Estado</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-map input-icon"></i>
+                                        <input type="text" id="pEstado" placeholder="SP">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pCidade">Cidade</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-city input-icon"></i>
+                                        <input type="text" id="pCidade" placeholder="São Paulo">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pBairro">Bairro</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-map-pin input-icon"></i>
+                                        <input type="text" id="pBairro" placeholder="Centro">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pRua">Rua / Avenida</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-road input-icon"></i>
+                                        <input type="text" id="pRua" placeholder="Rua das Flores">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pNumero">Número</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-hashtag input-icon"></i>
+                                        <input type="text" id="pNumero" placeholder="123">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pComplemento">Complemento</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-building input-icon"></i>
+                                    <input type="text" id="pComplemento" placeholder="Apto 45, Bloco B">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-auth" style="margin-top:1rem;">
+                                <span>Salvar Dados</span>
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- SEGURANÇA: TROCA DE SENHA -->
+                    <div class="perfil-card" style="margin-top: 1.5rem;">
+                        <h2 class="perfil-card-title">
+                            <i class="fa-solid fa-lock"></i> Segurança
+                        </h2>
+                        <form id="formSenha">
+                            <div class="form-group">
+                                <label for="senhaAtual">Senha atual</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-lock input-icon"></i>
+                                    <input type="password" id="senhaAtual" placeholder="Sua senha atual">
+                                    <button type="button" class="btn-toggle-pass" id="btnToggleSenhaAtual">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span class="field-error" id="senhaAtualError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="senhaNova">Nova senha</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-key input-icon"></i>
+                                    <input type="password" id="senhaNova" placeholder="Mínimo 6 caracteres">
+                                    <button type="button" class="btn-toggle-pass" id="btnToggleSenhaNova">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span class="field-error" id="senhaNovaError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="senhaConfirmar">Confirmar nova senha</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-key input-icon"></i>
+                                    <input type="password" id="senhaConfirmar" placeholder="Repita a nova senha">
+                                    <button type="button" class="btn-toggle-pass" id="btnToggleSenhaConfirmar">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                                <span class="field-error" id="senhaConfirmarError"></span>
+                            </div>
+                            <span class="form-error" id="senhaFormError"></span>
+                            <button type="submit" class="btn-auth btn-auth--outline" style="margin-top:1rem;">
+                                <span>Alterar Senha</span>
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ABA: MEIOS DE PAGAMENTO -->
+                <div class="perfil-panel" id="panelPagamentos">
+                    <div class="perfil-card">
+                        <h2 class="perfil-card-title">
+                            <i class="fa-solid fa-credit-card"></i> Cartões Salvos
+                        </h2>
+                        <div id="listaCartoes">
+                            <!-- JS renderiza aqui -->
+                        </div>
+
+                        <div class="perfil-section-divider">
+                            <span>Adicionar Novo Cartão</span>
+                        </div>
+
+                        <form id="formCartao">
+                            <div class="card-preview" id="cardPreview">
+                                <div class="card-preview-chip"><i class="fa-solid fa-microchip"></i></div>
+                                <div class="card-preview-number" id="prevNumero">•••• •••• •••• ••••</div>
+                                <div class="card-preview-footer">
+                                    <div>
+                                        <div class="card-preview-label">Titular</div>
+                                        <div class="card-preview-name" id="prevNome">SEU NOME</div>
+                                    </div>
+                                    <div>
+                                        <div class="card-preview-label">Validade</div>
+                                        <div class="card-preview-val" id="prevValidade">MM/AA</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cartaoNome">Nome no cartão</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-user input-icon"></i>
+                                    <input type="text" id="cartaoNome" placeholder="Como está no cartão" maxlength="26">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cartaoNumero">Número do cartão</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-credit-card input-icon"></i>
+                                    <input type="text" id="cartaoNumero" placeholder="0000 0000 0000 0000" maxlength="19">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cartaoValidade">Validade</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-calendar input-icon"></i>
+                                        <input type="text" id="cartaoValidade" placeholder="MM/AA" maxlength="5">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cartaoCvv">CVV</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-shield input-icon"></i>
+                                        <input type="password" id="cartaoCvv" placeholder="•••" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="form-error" id="cartaoError"></span>
+                            <button type="submit" class="btn-auth" style="margin-top:1rem;">
+                                <span>Salvar Cartão</span>
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ABA: HISTÓRICO -->
+                <div class="perfil-panel" id="panelHistorico">
+                    <div class="perfil-card">
+                        <h2 class="perfil-card-title">
+                            <i class="fa-solid fa-clock-rotate-left"></i> Histórico de Pedidos
+                        </h2>
+                        <div id="listaHistorico">
+                            <!-- JS renderiza aqui -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/perfil.js"></script>
+</body>
+</html>
