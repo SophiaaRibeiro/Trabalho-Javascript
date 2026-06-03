@@ -284,18 +284,88 @@
 
 /* ─── ERROS ─── */
 
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-6px); }
+    40%       { transform: translateX(6px); }
+    60%       { transform: translateX(-4px); }
+    80%       { transform: translateX(4px); }
+}
+
 .field-error {
-    font-size: 0.78rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
     color: #e74c3c;
-    min-height: 1rem;
+    min-height: 1.1rem;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.field-error:not(:empty) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.field-error:not(:empty)::before {
+    content: '\f06a';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.75rem;
+    flex-shrink: 0;
 }
 
 .form-error {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #c0392b;
+    background: rgba(231, 76, 60, 0.08);
+    border: 1.5px solid rgba(231, 76, 60, 0.25);
+    border-radius: 10px;
+    padding: 0;
+    min-height: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.25s;
+    opacity: 0;
+}
+
+.form-error:not(:empty) {
+    padding: 0.65rem 1rem;
+    max-height: 80px;
+    opacity: 1;
+}
+
+.form-error:not(:empty)::before {
+    content: '\f071';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     font-size: 0.82rem;
+    flex-shrink: 0;
+}
+
+.input-wrap input.input--error,
+.input-wrap select.input--error {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15) !important;
+    animation: shake 0.4s ease;
+}
+
+.input-wrap input.input--error:focus,
+.input-wrap select.input--error:focus {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
+}
+
+.input--error ~ .input-icon {
     color: #e74c3c;
-    text-align: center;
-    min-height: 1.2rem;
 }
 
 /* ─── LINKS ─── */
