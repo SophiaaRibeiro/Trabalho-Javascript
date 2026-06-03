@@ -30,12 +30,16 @@
                 <li><a href="../pages/contato.html">Contato</a></li>
             </ul>
             <div class="nav-actions">
+                <div class="mobile-only">
+                    <a class="btn-icon" href="../pages/login.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>  
+
                 <button class="btn-icon" id="themeToggle">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <!-- <a class="btn-icon" href="../pages/login.html">
-                    <i class="fa-solid fa-user"></i>
-                </a> -->
+                
                 <a class="btn-icon" href="../pages/carrinho.html">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
@@ -112,7 +116,7 @@
                 <div class="cards-grid">
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="espresso">
+                    <article class="coffee-card" data-category="espresso" onclick="openProductModal(this)">
 
                         <img src="../img/expresso-premium.jpg" class="card-img">
                             
@@ -145,7 +149,9 @@
                                     </button>
                                     
 
-                                    <a class="btn btn-primary btn-sm" href="/pages/carrinho.html">
+                                    <a class="btn btn-primary btn-sm"
+                                        href="/pages/carrinho.html"
+                                        onclick="event.stopPropagation()">
                                         Pedir
                                     </a>
 
@@ -158,7 +164,7 @@
                     </article>
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="espresso">
+                    <article class="coffee-card" data-category="espresso" onclick="openProductModal(this)">
 
                         <img src="../img/latte-cremoso.jpg" class="card-img">
                             
@@ -190,7 +196,9 @@
                                        <i class="fa-regular fa-heart"></i>
                                     </button>
 
-                                    <a class="btn btn-primary btn-sm" href="/pages/carrinho.html">
+                                    <a class="btn btn-primary btn-sm"
+                                        href="/pages/carrinho.html"
+                                        onclick="event.stopPropagation()">
                                         Pedir
                                     </a>
 
@@ -203,7 +211,7 @@
                     </article>
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="gelado">
+                    <article class="coffee-card" data-category="gelado" onclick="openProductModal(this)">
 
                         <img src="../img/ice-coffee.jpg" class ="card-img">
                             
@@ -235,7 +243,9 @@
                                       <i class="fa-regular fa-heart"></i>
                                     </button>
 
-                                    <a class="btn btn-primary btn-sm" href="/pages/carrinho.html">
+                                    <a class="btn btn-primary btn-sm"
+                                        href="/pages/carrinho.html"
+                                        onclick="event.stopPropagation()">
                                         Pedir
                                     </a>
 
@@ -248,7 +258,7 @@
                     </article>
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="sem-cafe">
+                    <article class="coffee-card" data-category="sem-cafe" onclick="openProductModal(this)">
 
                         <img src="../img/chocolate-quente.jpg" class="card-img">
                             
@@ -280,7 +290,9 @@
                                       <i class="fa-regular fa-heart"></i>
                                     </button>
 
-                                   <a class="btn btn-primary btn-sm" href="/pages/carrinho.html">
+                                   <a class="btn btn-primary btn-sm"
+                                        href="/pages/carrinho.html"
+                                        onclick="event.stopPropagation()">
                                         Pedir
                                     </a>
 
@@ -293,7 +305,7 @@
                     </article>
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="doce">
+                    <article class="coffee-card" data-category="doce" onclick="openProductModal(this)">
 
                         <img  src="../img/Caramel-Macchiato.jpg" class="card-img">
                             
@@ -325,7 +337,9 @@
                                         <i class="fa-regular fa-heart"></i>
                                     </button>
 
-                                    <a class="btn btn-primary btn-sm" href="/pages/carrinho.html">
+                                    <a class="btn btn-primary btn-sm"
+                                        href="/pages/carrinho.html"
+                                        onclick="event.stopPropagation()">
                                         Pedir
                                     </a>
 
@@ -338,7 +352,7 @@
                     </article>
 
                     <!-- CARD -->
-                    <article class="coffee-card" data-category="espresso">
+                    <article class="coffee-card" data-category="espresso" onclick="openProductModal(this)">
 
                         <img src="../img/Hazelnut-Coffee.jpg" class="card-img">
                             
@@ -370,7 +384,9 @@
                                        <i class="fa-regular fa-heart"></i>
                                     </button>
 
-                                   <a class="btn btn-primary btn-sm" href="/pages/carrinho.html">
+                                   <a class="btn btn-primary btn-sm"
+                                        href="/pages/carrinho.html"
+                                        onclick="event.stopPropagation()">
                                         Pedir
                                     </a>
 
@@ -388,10 +404,145 @@
 
         </section>
 
+     <!-- TOAST -->
+    <div id="toast-container"></div>
+
+
+            <!-- MODAL PRODUTO -->
+    <div class="product-modal" id="productModal">
+
+        <div class="product-overlay" onclick="closeProductModal()"></div>
+    
+        <div class="product-box">
+    
+        <button class="close-product" onclick="closeProductModal()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    
+        <!-- IMAGENS -->
+        <div class="product-images">
+    
+            <img 
+            src="../img/expresso-premium.jpg"
+            class="main-product-image"
+            id="mainImage"
+            >
+    
+            <div class="product-thumbs">
+    
+            <img src="../img/expresso-premium.jpg" class="thumb active">
+            <img src="../img/latte-cremoso.jpg" class="thumb">
+            <img src="../img/ice-coffee.jpg" class="thumb">
+    
+            </div>
+    
+        </div>
+    
+        <!-- INFO -->
+        <div class="product-details">
+    
+            <span class="tag tag-especial" id="modalProductTag">
+                Especial
+            </span>
+    
+            <h2 id="modalProductName">
+                Espresso Premium
+            </h2>
+    
+            <p class="product-text" id="modalProductDesc">
+            Café intenso com aroma marcante e torra artesanal.
+            </p>
+    
+
+    
+            <!-- INGREDIENTES -->
+            <div class="product-section">
+    
+            <h4>Ingredientes</h4>
+    
+            <div class="ingredients-list">
+    
+                <span>Café Premium</span>
+                <span>Leite</span>
+                <span>Chocolate</span>
+    
+            </div>
+    
+            </div>
+    
+            <!-- TAMANHO -->
+            <div class="product-section">
+    
+            <h4>Tamanho</h4>
+    
+            <div class="size-options">
+    
+                <button class="size-btn active">
+                Mini
+                </button>
+    
+                <button class="size-btn">
+                Médio
+                </button>
+    
+                <button class="size-btn">
+                Grande
+                </button>
+    
+            </div>
+    
+            </div>
+    
+            <!-- OBSERVAÇÃO -->
+            <div class="product-section">
+    
+            <h4>Observações</h4>
+    
+            <textarea 
+                class="obs-area"
+                placeholder="Ex: sem açúcar, tirar chocolate..."
+            ></textarea>
+    
+            </div>
+    
+            <!-- FOOTER -->
+            <div class="product-footer">
+    
+                <span class="product-price" id="modalProductPrice">
+                R$ 14
+            </span>
+            
+            <div class="quantity-control">
+
+                <button class="qty-btn" id="decreaseQty">
+                -
+                </button>
+            
+                <span id="quantityValue">
+                1
+                </span>
+            
+                <button class="qty-btn" id="increaseQty">
+                +
+                </button>
+            
+            </div>
+    
+            <button class="btn btn-primary" id="addToCartModal">
+                Adicionar ao Carrinho
+            </button>
+    
+            </div>
+    
+        </div>
+    
+        </div>
+    
+    </div>
+
     </main>
 
-    <!-- TOAST -->
-    <div id="toast-container"></div>
+   
 
    <script src="../js/main.js"></script>
     <script src="../js/auth.js"></script>
