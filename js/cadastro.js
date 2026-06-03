@@ -20,49 +20,68 @@ if (toggleSenha) {
     });
 }
 
+function limparErro(inputEl, errorEl) {
+    inputEl.classList.remove('input--error');
+    errorEl.textContent = '';
+}
+
+function marcarErro(inputEl, errorEl, msg) {
+    inputEl.classList.add('input--error');
+    errorEl.textContent = msg;
+}
+
 const cadastroForm = document.getElementById('cadastroForm');
 
 if (cadastroForm) {
+    const nomeInput     = document.getElementById('cadNome');
+    const emailInput    = document.getElementById('cadEmail');
+    const senhaInput    = document.getElementById('cadSenha');
+    const confirmarInput = document.getElementById('cadConfirmar');
+    const nomeError     = document.getElementById('nomeError');
+    const emailError    = document.getElementById('emailError');
+    const senhaError    = document.getElementById('senhaError');
+    const confirmarError = document.getElementById('confirmarError');
+    const cadastroError = document.getElementById('cadastroError');
+
+    nomeInput.addEventListener('input',      () => limparErro(nomeInput, nomeError));
+    emailInput.addEventListener('input',     () => limparErro(emailInput, emailError));
+    senhaInput.addEventListener('input',     () => limparErro(senhaInput, senhaError));
+    confirmarInput.addEventListener('input', () => limparErro(confirmarInput, confirmarError));
+
     cadastroForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const nome = document.getElementById('cadNome').value.trim();
-        const email = document.getElementById('cadEmail').value.trim();
-        const senha = document.getElementById('cadSenha').value;
-        const confirmar = document.getElementById('cadConfirmar').value;
+        const nome      = nomeInput.value.trim();
+        const email     = emailInput.value.trim();
+        const senha     = senhaInput.value;
+        const confirmar = confirmarInput.value;
 
-        const nomeError = document.getElementById('nomeError');
-        const emailError = document.getElementById('emailError');
-        const senhaError = document.getElementById('senhaError');
-        const confirmarError = document.getElementById('confirmarError');
-        const cadastroError = document.getElementById('cadastroError');
-
-        nomeError.textContent = '';
-        emailError.textContent = '';
-        senhaError.textContent = '';
-        confirmarError.textContent = '';
+        limparErro(nomeInput, nomeError);
+        limparErro(emailInput, emailError);
+        limparErro(senhaInput, senhaError);
+        limparErro(confirmarInput, confirmarError);
         cadastroError.textContent = '';
 
         let valido = true;
 
         if (!nome || nome.length < 2) {
-            nomeError.textContent = 'Informe seu nome completo.';
+            marcarErro(nomeInput, nomeError, 'Informe seu nome completo.');
             valido = false;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email || !emailRegex.test(email)) {
-            emailError.textContent = 'Informe um e-mail válido.';
+            marcarErro(emailInput, emailError, 'Informe um e-mail válido.');
             valido = false;
         }
 
         if (!senha || senha.length < 6) {
-            senhaError.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+            marcarErro(senhaInput, senhaError, 'A senha deve ter pelo menos 6 caracteres.');
             valido = false;
         }
 
         if (senha !== confirmar) {
-            confirmarError.textContent = 'As senhas não coincidem.';
+            marcarErro(confirmarInput, confirmarError, 'As senhas não coincidem.');
             valido = false;
         }
 

@@ -86,7 +86,6 @@ if (formDados) {
 
 const formSenha = document.getElementById('formSenha');
 if (formSenha) {
-    // Toggle de visibilidade da senha
     document.querySelectorAll('.btn-toggle-pass').forEach(btn => {
         btn.addEventListener('click', () => {
             const targetId = btn.dataset.target;
@@ -105,18 +104,34 @@ if (formSenha) {
         });
     });
 
+    const senhaAtualInput    = document.getElementById('senhaAtual');
+    const senhaNovaInput     = document.getElementById('senhaNova');
+    const senhaConfirmarInput = document.getElementById('senhaConfirmar');
+    const errorAtual         = document.getElementById('senhaAtualError');
+    const errorNova          = document.getElementById('senhaNovaError');
+    const errorConfirmar     = document.getElementById('senhaConfirmarError');
+    const errorForm          = document.getElementById('senhaFormError');
+
+    function limparErroCampo(input, error) {
+        input.classList.remove('input--error');
+        error.textContent = '';
+        if (errorForm) errorForm.textContent = '';
+    }
+
+    senhaAtualInput.addEventListener('input',     () => limparErroCampo(senhaAtualInput, errorAtual));
+    senhaNovaInput.addEventListener('input',      () => limparErroCampo(senhaNovaInput, errorNova));
+    senhaConfirmarInput.addEventListener('input', () => limparErroCampo(senhaConfirmarInput, errorConfirmar));
+
     formSenha.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const senhaAtual = document.getElementById('senhaAtual').value;
-        const senhaNova = document.getElementById('senhaNova').value;
-        const senhaConfirmar = document.getElementById('senhaConfirmar').value;
+        const senhaAtual    = senhaAtualInput.value;
+        const senhaNova     = senhaNovaInput.value;
+        const senhaConfirmar = senhaConfirmarInput.value;
 
-        const errorAtual = document.getElementById('senhaAtualError');
-        const errorNova = document.getElementById('senhaNovaError');
-        const errorConfirmar = document.getElementById('senhaConfirmarError');
-        const errorForm = document.getElementById('senhaFormError');
-
+        senhaAtualInput.classList.remove('input--error');
+        senhaNovaInput.classList.remove('input--error');
+        senhaConfirmarInput.classList.remove('input--error');
         errorAtual.textContent = '';
         errorNova.textContent = '';
         errorConfirmar.textContent = '';
@@ -125,26 +140,29 @@ if (formSenha) {
         let valido = true;
 
         if (!senhaAtual) {
+            senhaAtualInput.classList.add('input--error');
             errorAtual.textContent = 'Informe a senha atual.';
             valido = false;
         } else if (senhaAtual !== usuario.senha) {
+            senhaAtualInput.classList.add('input--error');
             errorAtual.textContent = 'Senha atual incorreta.';
             valido = false;
         }
 
         if (!senhaNova || senhaNova.length < 6) {
+            senhaNovaInput.classList.add('input--error');
             errorNova.textContent = 'A nova senha deve ter pelo menos 6 caracteres.';
             valido = false;
         }
 
         if (senhaNova !== senhaConfirmar) {
+            senhaConfirmarInput.classList.add('input--error');
             errorConfirmar.textContent = 'As novas senhas não coincidem.';
             valido = false;
         }
 
         if (!valido) return;
 
-        // Atualizar senha
         usuario.senha = senhaNova;
         atualizarUsuarioStorage(usuario);
 
@@ -152,6 +170,7 @@ if (formSenha) {
         formSenha.reset();
     });
 }
+
 
 // ======================
 // CARTÕES

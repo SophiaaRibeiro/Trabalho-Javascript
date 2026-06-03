@@ -22,29 +22,48 @@ if (toggleSenha) {
     });
 }
 
+function limparErro(inputEl, errorEl) {
+    inputEl.classList.remove('input--error');
+    errorEl.textContent = '';
+}
+
+function marcarErro(inputEl, errorEl, msg) {
+    inputEl.classList.add('input--error');
+    errorEl.textContent = msg;
+}
+
 if (loginForm) {
+    const emailInput = document.getElementById('loginEmail');
+    const senhaInput = document.getElementById('loginSenha');
+    const emailError = document.getElementById('emailError');
+    const senhaError = document.getElementById('senhaError');
+    const loginError = document.getElementById('loginError');
+
+    emailInput.addEventListener('input', () => limparErro(emailInput, emailError));
+    senhaInput.addEventListener('input', () => {
+        limparErro(senhaInput, senhaError);
+        loginError.textContent = '';
+    });
+
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const email = document.getElementById('loginEmail').value.trim();
-        const senha = document.getElementById('loginSenha').value;
-        const emailError = document.getElementById('emailError');
-        const senhaError = document.getElementById('senhaError');
-        const loginError = document.getElementById('loginError');
+        const email = emailInput.value.trim();
+        const senha = senhaInput.value;
 
-        emailError.textContent = '';
-        senhaError.textContent = '';
+        limparErro(emailInput, emailError);
+        limparErro(senhaInput, senhaError);
         loginError.textContent = '';
 
         let valido = true;
 
         if (!email) {
-            emailError.textContent = 'Informe seu e-mail.';
+            marcarErro(emailInput, emailError, 'Informe seu e-mail.');
             valido = false;
         }
 
         if (!senha) {
-            senhaError.textContent = 'Informe sua senha.';
+            marcarErro(senhaInput, senhaError, 'Informe sua senha.');
             valido = false;
         }
 
@@ -53,6 +72,8 @@ if (loginForm) {
         const resultado = loginUsuario(email, senha);
 
         if (!resultado.ok) {
+            marcarErro(emailInput, emailError, '');
+            marcarErro(senhaInput, senhaError, '');
             loginError.textContent = resultado.msg;
             return;
         }

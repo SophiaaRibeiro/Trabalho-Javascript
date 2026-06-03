@@ -4,17 +4,27 @@
 const esqueciForm = document.getElementById('esqueciForm');
 
 if (esqueciForm) {
+    const esqueciEmailInput = document.getElementById('esqueciEmail');
+    const emailError        = document.getElementById('emailError');
+    const esqueciError      = document.getElementById('esqueciError');
+
+    esqueciEmailInput.addEventListener('input', () => {
+        esqueciEmailInput.classList.remove('input--error');
+        emailError.textContent = '';
+        esqueciError.textContent = '';
+    });
+
     esqueciForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const email = document.getElementById('esqueciEmail').value.trim();
-        const emailError = document.getElementById('emailError');
-        const esqueciError = document.getElementById('esqueciError');
+        const email = esqueciEmailInput.value.trim();
 
+        esqueciEmailInput.classList.remove('input--error');
         emailError.textContent = '';
         esqueciError.textContent = '';
 
         if (!email) {
+            esqueciEmailInput.classList.add('input--error');
             emailError.textContent = 'Informe seu e-mail.';
             return;
         }
@@ -22,6 +32,7 @@ if (esqueciForm) {
         const resultado = recuperarSenha(email);
 
         if (!resultado.ok) {
+            esqueciEmailInput.classList.add('input--error');
             esqueciError.textContent = resultado.msg;
             return;
         }
