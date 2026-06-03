@@ -171,5 +171,6 @@ function moverAuthParaMenuMobile() {
 
 }
 
+
 moverAuthParaMenuMobile();
 document.addEventListener('DOMContentLoaded', renderizarNavAuth);
