@@ -15,12 +15,7 @@ function renderFavorites() {
 
     if (!favoritesContainer) return;
 
-    favoritesContainer.innerHTML = '';
-
-    favorites =
-        JSON.parse(localStorage.getItem('favorites')) || [];
-
-    
+    favoritesContainer.innerHTML = '';    
 
     if (favorites.length === 0) {
 
