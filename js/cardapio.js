@@ -188,8 +188,9 @@ if (favButtons.length > 0) {
 
     favButtons.forEach(button => {
 
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (event) => {
 
+            event.stopPropagation();
             const usuarioLogado = getUsuarioLogado ? getUsuarioLogado() : null;
 
             if (!usuarioLogado) {
@@ -425,9 +426,6 @@ function closeProductModal() {
 }
 
 
-
-
-
 const sizeButtons =
   document.querySelectorAll('.size-btn');
 
@@ -482,9 +480,6 @@ function resetSizeSelection() {
   currentPrice = basePrice;
   updateTotalPrice();
 }
-
-
-
 
 
 let quantity = 1;

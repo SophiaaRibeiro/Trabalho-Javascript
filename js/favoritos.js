@@ -6,7 +6,6 @@ const favoritesCount =
     document.querySelector('.fav-count strong');
 
 
-
 let favorites =
     JSON.parse(localStorage.getItem('favorites')) || [];
 
