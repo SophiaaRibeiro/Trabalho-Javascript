@@ -8,7 +8,6 @@ const savedTheme =
     localStorage.getItem('theme');
 
 
-// aplica tema salvo
 if (savedTheme === 'dark') {
 
     document.documentElement.setAttribute(
@@ -33,7 +32,6 @@ if (themeToggle) {
         const currentTheme =
             document.documentElement.getAttribute('data-theme');
 
-        // DARK -> LIGHT
         if (currentTheme === 'dark') {
 
             document.documentElement.setAttribute(
@@ -55,7 +53,6 @@ if (themeToggle) {
 
         }
 
-        // LIGHT -> DARK
         else {
 
             document.documentElement.setAttribute(
@@ -81,7 +78,6 @@ if (themeToggle) {
 
 }
 
-// MENU MOBILE
 
 const menuButton = document.getElementById('menuMobile');
 
@@ -99,7 +95,6 @@ if(menuButton){
 
 }
 
-// fechar clicando fora
 
 if(menuOverlay){
 

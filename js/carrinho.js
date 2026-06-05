@@ -1,7 +1,4 @@
 
-// ======================
-// CUPONS VÁLIDOS
-// ======================
 const CUPONS = {
     'VELVET10': { desconto: 10, tipo: 'percentual', label: '10% off' },
     'CAFE20':   { desconto: 20, tipo: 'percentual', label: '20% off' },
@@ -11,18 +8,12 @@ const CUPONS = {
 
 let cupomAtivo = JSON.parse(localStorage.getItem('vc_cupom')) || null;
 
-// ======================
-// ELEMENTOS DE RESUMO
-// ======================
 const summarySubtotal = document.getElementById('summarySubtotal');
 const summaryTotal    = document.getElementById('summaryTotal');
 const summaryDesconto = document.getElementById('summaryDesconto');
 const rowDesconto     = document.getElementById('rowDesconto');
 const cupomNome       = document.getElementById('cupomNome');
 
-// ======================
-// CARRINHO
-// ======================
 const cartContainer = document.querySelector('.cart-items');
 
 if (!cartContainer) {
@@ -146,9 +137,6 @@ if (!cartContainer) {
     renderCart();
 }
 
-// ======================
-// CUPOM
-// ======================
 
 const btnAplicarCupom = document.getElementById('btnAplicarCupom');
 const cupomInput      = document.getElementById('cupomInput');
@@ -192,9 +180,6 @@ function mostrarFeedbackCupom(sucesso, msg) {
     cupomFeedback.className = 'coupon-feedback ' + (sucesso ? 'coupon-ok' : 'coupon-err');
 }
 
-// ======================
-// CHECKOUT
-// ======================
 
 const checkoutBtn = document.getElementById('checkoutBtn');
 

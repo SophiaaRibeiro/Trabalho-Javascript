@@ -1,5 +1,4 @@
 
-// ESQUECI A SENHA
 
 const esqueciForm = document.getElementById('esqueciForm');
 

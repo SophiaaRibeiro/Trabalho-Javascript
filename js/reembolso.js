@@ -1,7 +1,4 @@
 
-// ======================
-// REEMBOLSO
-// ======================
 
 const usuario = getUsuarioLogado();
 const reembolsoWrap = document.getElementById('reembolsoWrap');
@@ -20,7 +17,6 @@ if (!usuario) {
 function carregarPedidos() {
     const pedidos = usuario.pedidos || [];
 
-    // Filtra apenas pedidos SEM reembolso já solicitado
     const pedidosDisponiveis = pedidos.filter(p => !p.reembolsoSolicitado);
 
     if (pedidos.length === 0) {
@@ -151,7 +147,6 @@ if (reembolsoForm) {
         reembolsos.push(solicitacao);
         localStorage.setItem('vc_reembolsos', JSON.stringify(reembolsos));
 
-        // Marcar o pedido como reembolsado no histórico do usuário
         const idxPedido = (usuario.pedidos || []).findIndex(p => p.codigo === pedidoCodigo);
         if (idxPedido !== -1) {
             usuario.pedidos[idxPedido].reembolsoSolicitado = true;

@@ -1,7 +1,4 @@
 
-// ======================
-// AUTH - VELVET COFFEE
-// ======================
 
 function getUsuarios() {
     return JSON.parse(localStorage.getItem('vc_usuarios')) || [];
@@ -63,9 +60,6 @@ function recuperarSenha(email) {
     return { ok: true, senha: novaSenha };
 }
 
-// ======================
-// HEADER DINÂMICO
-// ======================
 
 function determinarRaiz() {
     const path = window.location.pathname;
@@ -73,40 +67,6 @@ function determinarRaiz() {
     return '';
 }
 
-// function renderizarNavAuth() {
-//     const raiz = determinarRaiz();
-//     const usuario = getUsuarioLogado();
-//     const navActions = document.querySelector('.nav-actions');
-//     if (!navActions) return;
-
-//     // Remove qualquer botão de auth antigo para evitar duplicatas
-//     navActions.querySelectorAll('.nav-auth-btn').forEach(el => el.remove());
-
-//     if (usuario) {
-//         const btnPerfil = document.createElement('a');
-//         btnPerfil.className = 'btn-icon nav-auth-btn';
-//         btnPerfil.href = raiz + 'pages/perfil.html';
-//         btnPerfil.title = 'Meu Perfil';
-//         btnPerfil.innerHTML = '<i class="fa-solid fa-user"></i>';
-
-//         const btnLogout = document.createElement('button');
-//         btnLogout.className = 'btn-icon nav-auth-btn';
-//         btnLogout.title = 'Sair';
-//         btnLogout.innerHTML = '<i class="fa-solid fa-right-from-bracket"></i>';
-//         btnLogout.addEventListener('click', logoutUsuario);
-
-//         navActions.prepend(btnLogout);
-//         navActions.prepend(btnPerfil);
-//     } else {
-//         const btnLogin = document.createElement('a');
-//         btnLogin.className = 'btn-icon nav-auth-btn';
-//         btnLogin.href = raiz + 'pages/login.html';
-//         btnLogin.title = 'Entrar';
-//         btnLogin.innerHTML = '<i class="fa-solid fa-user"></i>';
-
-//         navActions.prepend(btnLogin);
-//     }
-// }
 
 function renderizarNavAuth() {
     const raiz = determinarRaiz();
@@ -114,7 +74,6 @@ function renderizarNavAuth() {
     const navActions = document.querySelector('.nav-actions');
     if (!navActions) return;
 
-    // Remove qualquer botão de auth antigo para evitar duplicatas
     navActions.querySelectorAll('.nav-auth-btn').forEach(el => el.remove());
 
     if (usuario) {

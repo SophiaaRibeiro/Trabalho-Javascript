@@ -1,15 +1,10 @@
 
-// ======================
-// PERFIL
-// ======================
-
 const usuario = getUsuarioLogado();
 
 if (!usuario) {
     window.location.href = '../pages/login.html?redirect=../pages/perfil.html';
 }
 
-// ABAS
 
 const tabs = document.querySelectorAll('.perfil-tab');
 const panels = document.querySelectorAll('.perfil-panel');
@@ -27,16 +22,11 @@ function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// SAUDAÇÃO
 
 const saudacao = document.getElementById('perfilSaudacao');
 if (saudacao && usuario) {
     saudacao.textContent = `Olá, ${usuario.nome}! Gerencie seus dados aqui.`;
 }
-
-// ======================
-// DADOS PESSOAIS
-// ======================
 
 function carregarDados() {
     if (!usuario) return;
@@ -79,10 +69,6 @@ if (formDados) {
         showToast('Dados salvos com sucesso! ✅');
     });
 }
-
-// ======================
-// TROCA DE SENHA
-// ======================
 
 const formSenha = document.getElementById('formSenha');
 if (formSenha) {
@@ -172,9 +158,6 @@ if (formSenha) {
 }
 
 
-// ======================
-// CARTÕES
-// ======================
 
 function renderCartoes() {
     const lista = document.getElementById('listaCartoes');
@@ -221,7 +204,6 @@ function renderCartoes() {
 
 renderCartoes();
 
-// PREVIEW AO VIVO
 
 const cartaoNome = document.getElementById('cartaoNome');
 const cartaoNumero = document.getElementById('cartaoNumero');
@@ -288,10 +270,6 @@ if (formCartao) {
     });
 }
 
-// ======================
-// HISTÓRICO DE PEDIDOS
-// ======================
-
 function renderHistorico() {
     const lista = document.getElementById('listaHistorico');
     if (!lista) return;
@@ -356,7 +334,6 @@ function renderHistorico() {
 
 renderHistorico();
 
-// TOAST
 
 function showToast(msg) {
     let container = document.getElementById('toast-container');
@@ -372,7 +349,6 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 3000);
 }
 
-// ABRIR ABA DE HISTÓRICO se vier por query param
 
 const urlTab = new URLSearchParams(window.location.search).get('tab');
 if (urlTab) {

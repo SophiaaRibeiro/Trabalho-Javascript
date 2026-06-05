@@ -1,5 +1,4 @@
 
-// CADASTRO
 
 if (getUsuarioLogado()) {
     window.location.href = '../pages/perfil.html';

@@ -1,5 +1,4 @@
 
-// LOGIN
 
 const loginForm = document.getElementById('loginForm');
 

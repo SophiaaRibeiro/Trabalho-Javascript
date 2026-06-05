@@ -1,6 +1,3 @@
-// ======================
-// CUPONS VÁLIDOS (mesmos do carrinho)
-// ======================
 const CUPONS = {
     'VELVET10': { desconto: 10, tipo: 'percentual', label: '10% off' },
     'CAFE20':   { desconto: 20, tipo: 'percentual', label: '20% off' },
@@ -8,9 +5,6 @@ const CUPONS = {
     'FRETE':    { desconto: 8,  tipo: 'fixo',       label: 'Frete grátis' }
 };
 
-// ======================
-// DADOS DO CARRINHO
-// ======================
 
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cupomAtivo = JSON.parse(localStorage.getItem('vc_cupom')) || null;
@@ -28,9 +22,6 @@ function calcularDesconto(sub) {
 const desconto = calcularDesconto(subtotal);
 const total = Math.max(0, subtotal + 8 - desconto);
 
-// ======================
-// MOSTRAR RESUMO
-// ======================
 
 const subtotalValue    = document.getElementById('subtotalValue');
 const totalValue       = document.getElementById('totalValue');
@@ -47,9 +38,6 @@ if (cupomAtivo && desconto > 0) {
     if (payDescontoValue) payDescontoValue.textContent = `- R$ ${desconto.toFixed(2)}`;
 }
 
-// ======================
-// FORMA DE PAGAMENTO
-// ======================
 
 const paymentMethodRaw = localStorage.getItem('paymentMethod') || 'cartao';
 const pixSection  = document.getElementById('pixSection');
@@ -64,9 +52,6 @@ if (paymentMethodRaw === 'pix')      { if (pixSection)  pixSection.style.display
 if (paymentMethodRaw === 'dinheiro') { if (cashSection) cashSection.style.display = 'block'; }
 if (paymentMethodRaw === 'cartao')   { if (cardSection) cardSection.style.display = 'block'; }
 
-// ======================
-// ENDEREÇO
-// ======================
 
 const usuario = getUsuarioLogado ? getUsuarioLogado() : null;
 const enderecoSalvoArea  = document.getElementById('enderecoSalvoArea');
@@ -96,9 +81,6 @@ if (btnTrocarEndereco) {
     });
 }
 
-// ======================
-// CARTÕES SALVOS
-// ======================
 
 const cartoesArea   = document.getElementById('cartoesArea');
 const cartoesList   = document.getElementById('cartoesList');
@@ -146,7 +128,6 @@ if (paymentMethodRaw === 'cartao') {
         });
     }
 
-    // Máscara número de cartão
     const cardNumeroInput = document.getElementById('cardNumero');
     if (cardNumeroInput) {
         cardNumeroInput.addEventListener('input', () => {
@@ -155,7 +136,6 @@ if (paymentMethodRaw === 'cartao') {
         });
     }
 
-    // Máscara validade
     const cardValidadeInput = document.getElementById('cardValidade');
     if (cardValidadeInput) {
         cardValidadeInput.addEventListener('input', () => {
@@ -196,10 +176,6 @@ function renderCartoesSalvos(cartoes) {
     });
 }
 
-// ======================
-// GERAR CÓDIGO DO PEDIDO
-// ======================
-
 function gerarCodigoPedido() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let codigo = 'VC-';
@@ -214,9 +190,6 @@ function formatarData() {
     return agora.toLocaleDateString('pt-BR') + ' ' + agora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 }
 
-// ======================
-// FINALIZAR PEDIDO
-// ======================
 
 const paymentForm    = document.getElementById('paymentForm');
 const paymentSuccess = document.getElementById('paymentSuccess');
@@ -228,7 +201,6 @@ if (paymentForm) {
 
         if (paymentError) paymentError.textContent = '';
 
-        // Validar endereço
         let enderecoFinal = '';
         if (usandoEnderecoSalvo && usuario?.endereco) {
             const en = usuario.endereco;
@@ -244,7 +216,6 @@ if (paymentForm) {
             return;
         }
 
-        // Validar cartão novo (se for o caso)
         if (paymentMethodRaw === 'cartao' && !usandoCartaoSalvo) {
             const nome    = document.getElementById('cardNome')?.value.trim();
             const numero  = document.getElementById('cardNumero')?.value.replace(/\s/g, '');
@@ -261,7 +232,6 @@ if (paymentForm) {
                 return;
             }
 
-            // Salvar cartão se marcado e logado
             const salvar = document.getElementById('checkSalvarCartao')?.checked;
             if (salvar && usuario) {
                 if (!usuario.cartoes) usuario.cartoes = [];
@@ -270,7 +240,6 @@ if (paymentForm) {
             }
         }
 
-        // Gerar código e salvar pedido
         const codigoPedido = gerarCodigoPedido();
         const dataAtual    = formatarData();
 
@@ -290,14 +259,12 @@ if (paymentForm) {
             atualizarUsuarioStorage(usuario);
         }
 
-        // Mostrar sucesso
         const codigoDisplay = document.getElementById('codigoPedidoDisplay');
         if (codigoDisplay) codigoDisplay.textContent = codigoPedido;
 
         paymentForm.style.display = 'none';
         if (paymentSuccess) paymentSuccess.classList.add('show');
 
-        // Limpar localStorage
         localStorage.removeItem('cart');
         localStorage.removeItem('paymentMethod');
         localStorage.removeItem('vc_cupom');
