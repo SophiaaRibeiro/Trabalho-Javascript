@@ -1,11 +1,3 @@
-/* ═══════════════════════════════════════════
-   AUTH.CSS — Velvet Coffee
-   Login, Cadastro, Esqueci Senha, Perfil,
-   Reembolso, Checkout Smart
-═══════════════════════════════════════════ */
-
-/* ─── CUPOM ─── */
-
 .coupon-wrap {
     display: flex;
     gap: 0.5rem;
@@ -64,8 +56,6 @@
     font-weight: 700;
 }
 
-/* ─── CHECKBOX SALVAR CARTÃO ─── */
-
 .check-wrap {
     display: flex;
     align-items: center;
@@ -85,7 +75,7 @@
     flex-shrink: 0;
 }
 
-/* Label área de cartões */
+
 .card-area-label {
     font-size: 0.78rem;
     font-weight: 600;
@@ -94,8 +84,6 @@
     color: var(--text-light);
     margin-bottom: 0.6rem;
 }
-
-/* ─── AUTH PAGE ─── */
 
 .auth-page {
     display: flex;
@@ -124,8 +112,6 @@
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
-
-/* ─── BRAND ─── */
 
 .auth-brand {
     text-align: center;
@@ -164,7 +150,6 @@
     font-size: 0.9rem;
 }
 
-/* ─── FORM ─── */
 
 .auth-form {
     display: flex;
@@ -186,8 +171,6 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
 }
-
-/* ─── INPUT WRAP ─── */
 
 .input-wrap {
     position: relative;
@@ -223,7 +206,7 @@
     pointer-events: none;
 }
 
-/* Textarea */
+
 .input-textarea {
     width: 100%;
     padding: 0.85rem 1rem;
@@ -244,7 +227,7 @@
     box-shadow: 0 0 0 3px rgba(200, 146, 42, 0.15);
 }
 
-/* Select sem input-wrap */
+
 .input-select {
     width: 100%;
     padding: 0.85rem 1rem 0.85rem 2.75rem;
@@ -265,7 +248,7 @@
     box-shadow: 0 0 0 3px rgba(200, 146, 42, 0.15);
 }
 
-/* Toggle senha */
+
 .btn-toggle-pass {
     position: absolute;
     right: 0.8rem;
@@ -282,7 +265,6 @@
 
 .btn-toggle-pass:hover { color: var(--gold); }
 
-/* ─── ERROS ─── */
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
@@ -368,7 +350,7 @@
     color: #e74c3c;
 }
 
-/* ─── LINKS ─── */
+
 
 .auth-links-row {
     display: flex;
@@ -393,7 +375,6 @@
     color: var(--text-light);
 }
 
-/* ─── BOTÃO PRINCIPAL ─── */
 
 .btn-auth {
     display: flex;
@@ -432,7 +413,6 @@
     color: var(--brown-deep);
 }
 
-/* ─── SENHA TEMPORÁRIA ─── */
 
 .auth-result {
     text-align: center;
@@ -468,9 +448,6 @@
     color: var(--text-light);
 }
 
-/* ─── PERFIL ─── */
-
-/* Abas */
 .perfil-tabs {
     display: flex;
     gap: 0.5rem;
@@ -506,11 +483,11 @@
     font-weight: 700;
 }
 
-/* Panels */
+
 .perfil-panel { display: none; }
 .perfil-panel.active { display: block; }
 
-/* Card */
+
 .perfil-card {
     background: var(--white);
     border-radius: 20px;
@@ -532,7 +509,7 @@
     color: var(--gold);
 }
 
-/* Divisor de seção */
+
 .perfil-section-divider {
     display: flex;
     align-items: center;
@@ -557,7 +534,7 @@
     white-space: nowrap;
 }
 
-/* Form grid */
+
 .perfil-panel .form-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -579,7 +556,6 @@
     text-transform: uppercase;
 }
 
-/* ─── CARD PREVIEW ─── */
 
 .card-preview {
     background: linear-gradient(135deg, var(--brown-rich) 0%, #6B3A1F 100%);
@@ -645,7 +621,6 @@
     font-weight: 600;
 }
 
-/* ─── CARTÃO SALVO (LISTA) ─── */
 
 .cartao-salvo {
     display: flex;
@@ -719,7 +694,7 @@
     color: white;
 }
 
-/* Empty state cartões */
+
 .empty-cartoes {
     text-align: center;
     padding: 2rem;
@@ -732,8 +707,6 @@
     display: block;
     margin-bottom: 0.75rem;
 }
-
-/* ─── HISTÓRICO PEDIDOS ─── */
 
 .pedido-item {
     border: 1.5px solid var(--cream-dark);
@@ -845,7 +818,7 @@
     color: var(--brown-deep);
 }
 
-/* Badge reembolso solicitado */
+
 .badge-reembolso {
     display: inline-flex;
     align-items: center;
@@ -861,13 +834,12 @@
     white-space: nowrap;
 }
 
-/* Status reembolso */
 .pedido-status--reembolso {
     background: rgba(52, 152, 219, 0.12);
     color: #2980b9;
 }
 
-/* Protocolo no histórico */
+
 .protocolo-info {
     margin-top: 0.6rem;
     padding-top: 0.6rem;
@@ -882,7 +854,7 @@
 .protocolo-info i { color: #3498db; }
 .protocolo-info strong { color: var(--text-dark); letter-spacing: 0.05em; }
 
-/* ─── CÓDIGO DO PEDIDO (PAGAMENTO SUCESSO) ─── */
+
 
 .pedido-codigo-box {
     background: rgba(200,146,42,0.1);
@@ -908,7 +880,6 @@
     margin-bottom: 0.5rem;
 }
 
-/* ─── CHECKOUT SMART (CARRINHO) ─── */
 
 .checkout-section {
     margin-bottom: 1.25rem;
@@ -961,7 +932,7 @@
     border-color: var(--gold);
 }
 
-/* Dados salvos card */
+
 .saved-data-card {
     display: flex;
     align-items: center;
@@ -1002,7 +973,7 @@
     color: var(--gold);
 }
 
-/* Cartões no checkout */
+
 .cartao-checkout-item {
     display: flex;
     align-items: center;
@@ -1085,8 +1056,6 @@
     color: var(--gold);
 }
 
-/* ─── REEMBOLSO ─── */
-
 .reembolso-wrap {
     max-width: 680px;
     margin: 0 auto;
@@ -1119,7 +1088,7 @@
     color: var(--gold);
 }
 
-/* Detalhe do pedido no reembolso */
+
 .pedido-detalhe {
     border: 1.5px solid var(--gold);
     border-radius: 14px;
@@ -1129,7 +1098,7 @@
     animation: fadeInDown 0.3s ease;
 }
 
-/* .pedido-detalhe-inner {} */
+
 
 .pedido-detalhe-header {
     display: flex;
@@ -1143,7 +1112,7 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── RESPONSIVE ─── */
+
 
 @media (max-width: 640px) {
 

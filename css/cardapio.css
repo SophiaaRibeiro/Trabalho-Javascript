@@ -1,4 +1,3 @@
-/* ─── MONTE SEU CAFÉ ─── */
 .monte-layout {
   display: grid;
   grid-template-columns: 1fr 380px;
@@ -59,7 +58,6 @@
 .extra-item.selected { border-color: var(--gold); background: rgba(200,146,42,0.08); color: var(--text-dark); }
 .extra-item input[type="checkbox"] { accent-color: var(--gold); }
 
-/* Order Summary */
 .order-summary {
   background: var(--brown-deep);
   border-radius: 16px;
@@ -113,7 +111,7 @@
   50% { transform: scale(1.2); color: var(--gold); }
 }
 
-/* ─── QUIZ ─── */
+
 .quiz-wrap { max-width: 680px; margin: 0 auto; }
 .quiz-progress {
   background: var(--cream-dark);
@@ -194,7 +192,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* ─── FAVORITOS ─── */
 .fav-empty {
   text-align: center;
   padding: 5rem 2rem;
@@ -219,14 +216,14 @@
 }
 .btn-clear-fav:hover { background: #e74c3c; color: white; }
 
-/* ─── CONTATO ─── */
+
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 4rem;
   align-items: start;
 }
-/* .contact-info { } */
+
 .contact-item {
   display: flex; align-items: flex-start; gap: 1rem;
   margin-bottom: 1.75rem;
@@ -280,7 +277,7 @@
 }
 .form-success p { color: var(--text-light); font-size: 0.9rem; }
 
-/* ─── CART SIDEBAR ─── */
+
 .cart-item {
   display: flex; gap: 1rem;
   padding: 1rem 0;
@@ -307,7 +304,7 @@
   color: var(--text-dark);
 }
 
-/* ─── RATING STARS ─── */
+
 .rating-wrap { display: flex; gap: 0.4rem; }
 .star-btn {
   background: none; border: none; cursor: pointer;
@@ -323,8 +320,6 @@
   .form-row { grid-template-columns: 1fr; }
 }
 
-
-/* MODAL PRODUTO */
 
 .product-modal {
   position: fixed;

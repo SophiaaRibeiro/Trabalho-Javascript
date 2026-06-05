@@ -85,9 +85,6 @@ select {
     font-size: 1rem;
 }
 
-/* ======================
-   PIX
-====================== */
 
 .pix-area {
     display: none;
@@ -105,9 +102,6 @@ select {
     margin-bottom: 1rem;
 }
 
-/* ======================
-   MONEY
-====================== */
 
 .money-area {
     display: none;
@@ -139,7 +133,7 @@ select {
     transition: 0.4s;
 }
 
-/* ─── PAYMENT FORM ─── */
+
 
 .payment-form {
     display: flex;
@@ -149,7 +143,6 @@ select {
     margin-top: 2rem;
 }
 
-/* ─── METHOD BOX ─── */
 
 .payment-method-box {
     background: var(--cream);
@@ -179,7 +172,7 @@ select {
     line-height: 1.6;
 }
 
-/* ─── FORM GROUP ─── */
+
 
 .form-group {
     display: flex;
@@ -220,7 +213,7 @@ select {
     box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
 }
 
-/* ─── FORM ROW ─── */
+
 
 .form-row {
     display: grid;
@@ -229,7 +222,7 @@ select {
     gap: 1rem;
 }
 
-/* ─── PIX ─── */
+
 
 .pix-image {
     width: 220px;
@@ -247,7 +240,7 @@ select {
     box-shadow: 0 4px 20px var(--shadow-warm);
 }
 
-/* ─── PAYMENT BUTTON ─── */
+
 
 .btn-payment {
     width: 100%;
@@ -279,7 +272,7 @@ select {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* ─── BACK BUTTON ─── */
+
 
 .btn-back-home {
     display: flex;
@@ -299,7 +292,6 @@ select {
     opacity: 0.9;
 }
 
-/* ─── SUCCESS ─── */
 
 .payment-success {
     display: none;
@@ -321,7 +313,7 @@ select {
     margin-bottom: 1rem;
 }
 
-/* ─── ORDER PROGRESS ─── */
+
 
 .order-progress {
     display: flex;
@@ -350,7 +342,7 @@ select {
     color: var(--gold);
 }
 
-/* ─── ANIMATION ─── */
+
 
 @keyframes fadeIn {
 
@@ -366,7 +358,7 @@ select {
 
 }
 
-/* ─── RESPONSIVE ─── */
+
 
 @media(max-width: 700px){
 
@@ -383,7 +375,7 @@ select {
     }
 }
 
-/* ─── ENDEREÇO / CARTÃO (pagamento) ─── */
+
 
 #addressSection h3,
 #cardSection h3,
@@ -429,7 +421,7 @@ select {
     box-shadow: 0 0 0 3px rgba(200,146,42,0.15);
 }
 
-/* Linha de desconto verde */
+
 #payRowDesconto .desconto-value { color: #27ae60; font-weight: 700; }
 #payRowDesconto .cupom-badge {
     font-size: 0.7rem;

@@ -14,7 +14,6 @@
 
 <body>
 
-    <!-- HEADER -->
     <header>
         <button class="menu-mobile" id="menuMobile">
             <i class="fa-solid fa-bars"></i>
@@ -48,14 +47,13 @@
         </nav>
     </header>
 
-    <!-- PAGE -->
     <main class="page">
 
         <section class="payment-section">
 
             <div class="payment-card">
 
-                <!-- HEADER -->
+             
                 <div class="payment-header">
                     <div class="payment-icon">
                         <i class="fa-solid fa-mug-hot"></i>
@@ -64,7 +62,7 @@
                     <p>Complete seu pedido e aproveite sua experiência Velvet Coffee.</p>
                 </div>
 
-                <!-- RESUMO -->
+           
                 <div class="payment-summary">
                     <div class="summary-row">
                         <span>Subtotal</span>
@@ -84,14 +82,13 @@
                     </div>
                 </div>
 
-                <!-- FORM -->
+             
                 <form class="payment-form" id="paymentForm">
 
-                    <!-- 1. ENDEREÇO (sempre aqui) -->
                     <div class="payment-method-box" id="addressSection">
                         <h3><i class="fa-solid fa-location-dot"></i> Endereço de Entrega</h3>
 
-                        <!-- Endereço salvo (se logado e tiver) -->
+                    
                         <div id="enderecoSalvoArea" style="display:none;">
                             <div class="saved-data-card" id="enderecoSalvoCard">
                                 <div class="saved-data-info" id="enderecoSalvoInfo"></div>
@@ -101,7 +98,7 @@
                             </div>
                         </div>
 
-                        <!-- Input manual -->
+                   
                         <div id="enderecoInputArea">
                             <div class="form-group">
                                 <label for="enderecoInput">Endereço completo</label>
@@ -110,18 +107,18 @@
                         </div>
                     </div>
 
-                    <!-- 2. PIX -->
+                
                     <div id="pixSection" class="payment-method-box" style="display:none;">
                         <h3>Pagamento via PIX</h3>
                         <img src="../img/scan_me_qr_code.jpg" class="pix-image">
                         <p>Escaneie o QR Code para pagar.</p>
                     </div>
 
-                    <!-- 3. CARTÃO (salvo OU novo) -->
+                  
                     <div id="cardSection" class="payment-method-box" style="display:none;">
                         <h3>Dados do Cartão</h3>
 
-                        <!-- Cartões salvos -->
+                 
                         <div id="cartoesArea" style="display:none;">
                             <p class="card-area-label">Cartões salvos:</p>
                             <div id="cartoesList"></div>
@@ -131,7 +128,6 @@
                             </button>
                         </div>
 
-                        <!-- Formulário novo cartão -->
                         <div id="novoCartaoArea">
                             <div class="form-group">
                                 <label>Nome no cartão</label>
@@ -152,7 +148,7 @@
                                 </div>
                             </div>
 
-                            <!-- Botão salvar cartão (só se logado) -->
+                          
                             <div id="salvarCartaoWrap" style="display:none;">
                                 <label class="check-wrap">
                                     <input type="checkbox" id="checkSalvarCartao">
@@ -160,14 +156,13 @@
                                 </label>
                             </div>
 
-                            <!-- Botão voltar para salvos (se tiver) -->
+                     
                             <button type="button" class="btn-add-new" id="btnVerSalvos" style="display:none; margin-top:0.75rem;">
                                 <i class="fa-solid fa-arrow-left"></i> Ver cartões salvos
                             </button>
                         </div>
                     </div>
 
-                    <!-- 4. DINHEIRO -->
                     <div id="cashSection" class="payment-method-box" style="display:none;">
                         <h3>Pagamento em Dinheiro</h3>
                         <p>Seu pedido será pago na entrega ☕</p>
@@ -180,7 +175,6 @@
 
                     <span class="form-error" id="paymentError"></span>
 
-                    <!-- BOTÕES -->
                     <button type="submit" class="btn-payment">
                         Confirmar Pedido
                     </button>
@@ -191,7 +185,7 @@
 
                 </form>
 
-                <!-- SUCCESS -->
+           
                 <div class="payment-success" id="paymentSuccess">
                     <div class="success-icon">
                         <i class="fa-solid fa-circle-check"></i>
