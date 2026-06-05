@@ -24,14 +24,14 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../pages/cardapio.html" class="active">Cardápio</a></li>
-                <!-- <li><a href="../pages/carrinho.html">Carrinho</a></li> -->
+              
                 <li><a href="../pages/favoritos.html">Favoritos</a></li>
                 <li><a href="../pages/quiz.html">Quiz</a></li>
                 <li><a href="../pages/contato.html">Contato</a></li>
             </ul>
             <div class="nav-actions">
                 <div class="mobile-only">
-                    <a class="btn-icon" href="../pages/perfil.html">
+                    <a class="btn-icon" href="../pages/login.html">
                         <i class="fa-solid fa-user"></i>
                     </a>
                 </div>  
@@ -48,14 +48,14 @@
 </header>
    
 
-    <!-- PAGE -->
+   
     <main class="page">
 
         <section class="section">
 
             <div class="container">
 
-                <!-- HEADER -->
+                
                 <div class="section-header">
 
                     <h1 class="section-title">
@@ -70,7 +70,7 @@
 
                 </div>
 
-                <!-- SEARCH + FILTER -->
+                
                 <div class="toolbar">
 
                     <div class="search-wrap">
@@ -112,11 +112,12 @@
 
                 </div>
 
-                <!-- GRID -->
+               
                 <div class="cards-grid">
 
-                    <!-- CARD -->
-                    <article class="coffee-card" data-category="espresso" onclick="openProductModal(this)">
+                  
+                    <article class="coffee-card" data-category="espresso" data-img1="../img/expresso-premium.jpg" data-img2="../img/espresso-premium2.png"
+                    data-img3="../img/espresso-premium3.png" onclick="openProductModal(this)">
 
                         <img src="../img/expresso-premium.jpg" class="card-img">
                             
@@ -163,8 +164,10 @@
 
                     </article>
 
-                    <!-- CARD -->
-                    <article class="coffee-card" data-category="espresso" onclick="openProductModal(this)">
+                  
+                    <article class="coffee-card" data-category="espresso" data-img1="../img/latte-cremoso.jpg"
+                    data-img2="../img/latte-cremoso2.png" data-img3="../img/latte-cremoso3.png"
+                    onclick="openProductModal(this)">
 
                         <img src="../img/latte-cremoso.jpg" class="card-img">
                             
@@ -210,8 +213,9 @@
 
                     </article>
 
-                    <!-- CARD -->
-                    <article class="coffee-card" data-category="gelado" onclick="openProductModal(this)">
+                  
+                    <article class="coffee-card" data-category="gelado" data-img1="../img/ice-coffee.jpg"
+                    data-img2="../img/ice-coffee2.png" data-img3="../img/ice-coffee3.png" onclick="openProductModal(this)">
 
                         <img src="../img/ice-coffee.jpg" class ="card-img">
                             
@@ -257,8 +261,9 @@
 
                     </article>
 
-                    <!-- CARD -->
-                    <article class="coffee-card" data-category="sem-cafe" onclick="openProductModal(this)">
+               
+                    <article class="coffee-card" data-category="sem-cafe" data-img1="../img/chocolate-quente.jpg"
+                    data-img2="../img/chocolate-quente2.png" data-img3="../img/chocolante-quente3.png" onclick="openProductModal(this)">
 
                         <img src="../img/chocolate-quente.jpg" class="card-img">
                             
@@ -304,8 +309,8 @@
 
                     </article>
 
-                    <!-- CARD -->
-                    <article class="coffee-card" data-category="doce" onclick="openProductModal(this)">
+                    <article class="coffee-card" data-category="doce" data-img1="../img/Caramel-Macchiato.jpg"
+                    data-img2="../img/caramelo2.png" data-img3="../img/caramelo3.png" onclick="openProductModal(this)">
 
                         <img  src="../img/Caramel-Macchiato.jpg" class="card-img">
                             
@@ -351,8 +356,8 @@
 
                     </article>
 
-                    <!-- CARD -->
-                    <article class="coffee-card" data-category="espresso" onclick="openProductModal(this)">
+                    <article class="coffee-card" data-category="espresso" data-img1="../img/Hazelnut-Coffee.jpg"
+                    data-img2="../img/hazelnut2.png" data-img3="../img/hazelnut3.png" onclick="openProductModal(this)">
 
                         <img src="../img/Hazelnut-Coffee.jpg" class="card-img">
                             
@@ -404,11 +409,9 @@
 
         </section>
 
-     <!-- TOAST -->
     <div id="toast-container"></div>
 
 
-            <!-- MODAL PRODUTO -->
     <div class="product-modal" id="productModal">
 
         <div class="product-overlay" onclick="closeProductModal()"></div>
@@ -419,7 +422,6 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
     
-        <!-- IMAGENS -->
         <div class="product-images">
     
             <img 
@@ -431,14 +433,13 @@
             <div class="product-thumbs">
     
             <img src="../img/expresso-premium.jpg" class="thumb active">
-            <img src="../img/latte-cremoso.jpg" class="thumb">
-            <img src="../img/ice-coffee.jpg" class="thumb">
+            <img src="../img/espresso-premium2.png" class="thumb">
+            <img src="../img/espresso-premium3.png" class="thumb">
     
             </div>
     
         </div>
     
-        <!-- INFO -->
         <div class="product-details">
     
             <span class="tag tag-especial" id="modalProductTag">
@@ -455,7 +456,6 @@
     
 
     
-            <!-- INGREDIENTES -->
             <div class="product-section">
     
             <h4>Ingredientes</h4>
@@ -470,7 +470,6 @@
     
             </div>
     
-            <!-- TAMANHO -->
             <div class="product-section">
     
             <h4>Tamanho</h4>
@@ -493,7 +492,6 @@
     
             </div>
     
-            <!-- OBSERVAÇÃO -->
             <div class="product-section">
     
             <h4>Observações</h4>
@@ -505,7 +503,6 @@
     
             </div>
     
-            <!-- FOOTER -->
             <div class="product-footer">
     
                 <span class="product-price" id="modalProductPrice">
